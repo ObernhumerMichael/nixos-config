@@ -1,6 +1,7 @@
 {
     "cSpell.enabled": false,
     "conventionalCommits.scopes": [
-        "stylix"
+        "stylix",
+        "shell"
     ]
 }
