@@ -6,5 +6,6 @@
     firefox
     kitty
     tree
+    neovim
   ];
 }

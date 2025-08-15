@@ -7,5 +7,6 @@
     ./networking.nix
     ./locale.nix
     ./users.nix
+    ./stylix.nix
   ];
 }

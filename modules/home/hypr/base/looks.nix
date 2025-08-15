@@ -6,9 +6,6 @@
       gaps_out = 20;
       border_size = 2;
 
-      "col.active_border" = "rgb(cba6f7)";
-      "col.inactive_border" = "rgb(6c7086)";
-
       # Set to true enable resizing windows by clicking and dragging on borders and gaps
       resize_on_border = true;
 
@@ -35,7 +32,6 @@
         enabled = false;
         range = 6;
         render_power = 1;
-        color = "rgba(11111bee)";
       };
 
       # https://wiki.hyprland.org/Configuring/Variables/#blur
@@ -52,7 +48,7 @@
     };
 
     layerrule = [
-      "blur,wallpaper-selector"
+      "blur, wallpaper-selector"
       "blur, logout_dialog"
     ];
   };

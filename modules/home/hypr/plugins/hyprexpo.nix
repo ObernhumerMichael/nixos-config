@@ -4,8 +4,8 @@
     plugin = {
       hyprexpo = {
         columns = 3;
-        gap_size = 5;
-        bg_col = "rgb(111111)";
+        gap_size = 3;
+        bg_col = "rgb(${config.lib.stylix.colors.base03})";
         workspace_method = "first 1";
         enable_gesture = true;
         gesture_fingers = 3;
