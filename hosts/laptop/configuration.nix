@@ -8,7 +8,18 @@
 
   networking.hostName = "laptop";
 
-  boot.loader.systemd-boot.enable = true;
+  # Disable systemd-boot
+  boot.loader.systemd-boot.enable = false;
+
+  # Enable GRUB
+  boot.loader.grub = {
+    enable = true;
+
+    # If EFI system:
+    efiSupport = true;
+    device = "nodev";
+  };
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-282bd651-de34-4805-a7e1-dd3371cc8add".device =

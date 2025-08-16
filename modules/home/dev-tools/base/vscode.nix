@@ -36,6 +36,7 @@
               "commands" = [ "leap.findBackward" ];
             }
           ];
+          "vim.useSystemClipboard" = true;
         };
       };
     };
