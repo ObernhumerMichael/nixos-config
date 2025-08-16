@@ -5,7 +5,7 @@
     ./base/shell.nix
     ./base/git.nix
     ./base/kitty.nix
-    ./system-tools.nix
+    ./system-tools/common.nix
     ./dev-tools.nix
   ];
 }

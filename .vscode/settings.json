@@ -3,6 +3,7 @@
     "conventionalCommits.scopes": [
         "stylix",
         "shell",
-        "apps"
+        "apps",
+        "tools"
     ]
 }

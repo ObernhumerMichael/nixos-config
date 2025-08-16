@@ -4,6 +4,9 @@
     neofetch
     htop
     fastfetch
-    btop
+  ];
+
+  imports = [
+    ./base/btop.nix
   ];
 }
