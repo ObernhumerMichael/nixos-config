@@ -4,6 +4,7 @@
         "stylix",
         "shell",
         "apps",
-        "tools"
+        "tools",
+        "dev"
     ]
 }

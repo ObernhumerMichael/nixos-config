@@ -9,11 +9,14 @@
       name = "default";
       isDefault = true;
 
-      search.default = "ddg";
-      search.order = [
-        "ddg"
-        "google"
-      ];
+      search = {
+        default = "ddg";
+        force = true;
+        order = [
+          "ddg"
+          "google"
+        ];
+      };
 
       # needed for Stylix to override extensions cleanly
       extensions.force = true;

@@ -6,6 +6,6 @@
     ./base/git.nix
     ./base/kitty.nix
     ./system-tools/common.nix
-    ./dev-tools.nix
+    ./dev-tools/common.nix
   ];
 }
