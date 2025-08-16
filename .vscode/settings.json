@@ -5,6 +5,7 @@
         "shell",
         "apps",
         "tools",
-        "dev"
+        "dev",
+        "system"
     ]
 }

@@ -16,6 +16,7 @@
 
       # Applications
       "$mod, A, hyprexpo:expo, toggle" # workspace overview
+      "$mod, R, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi" # application launcher
 
       # Move focus
       "$mod, h, movefocus, l"
