@@ -5,6 +5,7 @@
     ../../modules/home/common.nix
     ../../modules/home/hypr/hyprland.nix
     ../../modules/home/apps/firefox.nix
+    ../../modules/home/apps/anki.nix
     ../../modules/home/stylix.nix
   ];
 
