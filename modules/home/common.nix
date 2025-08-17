@@ -6,6 +6,7 @@
     ./base/git.nix
     ./base/kitty.nix
     ./base/rofi/rofi.nix
+    ./base/waybar.nix
     ./system-tools/common.nix
     ./dev-tools/common.nix
   ];

@@ -7,5 +7,6 @@
       profileNames = [ "default" ];
       colorTheme.enable = true;
     };
+    waybar.enable = false;
   };
 }
