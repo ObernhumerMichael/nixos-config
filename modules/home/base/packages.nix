@@ -5,5 +5,6 @@
     thunderbird
     tree
     neovim
+    evince
   ];
 }

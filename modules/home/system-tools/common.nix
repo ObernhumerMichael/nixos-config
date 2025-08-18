@@ -8,5 +8,6 @@
 
   imports = [
     ./base/btop.nix
+    ./base/zoxide.nix
   ];
 }
