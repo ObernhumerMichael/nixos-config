@@ -16,12 +16,12 @@
         name = "Inter";
       };
       monospace = {
-        package = pkgs.fira-code;
-        name = "Fira Code";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font Mono";
       };
       emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font Mono";
       };
     };
   };

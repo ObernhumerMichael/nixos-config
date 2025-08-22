@@ -3,6 +3,7 @@
 {
   imports = [
     ./base.nix
+    ./fonts.nix
     ./cachix.nix
     ./networking.nix
     ./bluetooth.nix

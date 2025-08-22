@@ -7,6 +7,11 @@
       profileNames = [ "default" ];
       colorTheme.enable = true;
     };
-    waybar.enable = false;
+    waybar = {
+      enable = false;
+      # enableCenterBackColors = true;
+      # enableLeftBackColors = true;
+      # enableRightBackColors = true;
+    };
   };
 }
