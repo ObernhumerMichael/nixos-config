@@ -23,7 +23,9 @@ in
         modules-center = [
         ];
         modules-right = [
-          "pulseaudio/slider"
+          "tray"
+          "bluetooth"
+          "backlight"
           "pulseaudio"
           "battery"
           "clock"
@@ -68,12 +70,6 @@ in
           tooltip-format = "{timeTo} {capacity} %";
         };
 
-        "pulseaudio/slider" = {
-          min = 0;
-          max = 100;
-          orientation = "vertical";
-        };
-
         "pulseaudio" = {
           states = {
             silent = 0;
@@ -102,6 +98,31 @@ in
           scroll-step = 1;
           on-click = "pavucontrol";
           ignored-sinks = [ "Easy Effects Sink" ];
+        };
+
+        "backlight" = {
+          device = "intel_backlight";
+          format = "{icon}";
+          tooltip-format = "{percent}% {icon}";
+          format-icons = [
+            "󰃚"
+            "󰃞"
+            "󰃟"
+            "󰃠"
+          ];
+        };
+
+        "bluetooth" = {
+          format = "";
+          format-disabled = "󰂲";
+          format-off = "󰂲";
+          format-on = "󰂯";
+          format-connected = "{num_connections}󰂯";
+          format-no-controller = "󰂳";
+          tooltip-format = "{controller_alias}\t{controller_address}";
+          tooltip-format-connected = "{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}";
+          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_battery_percentage}%";
         };
       };
     };
@@ -140,10 +161,11 @@ in
       #clock {
         color: ${c.withHashtag.base0D};
         font-weight: bold;
-        font-size: 16px;
+        font-size: 18px;
       }
 
       #battery {
+        font-size: 18px;
         color: ${c.withHashtag.base0B};
       }
       #battery.warning {
@@ -153,31 +175,8 @@ in
         color: ${c.withHashtag.base08};
       }
 
-      #pulseaudio-slider {
-        padding: 0;
-        margin: 0;
-      }
-      #pulseaudio-slider slider {
-        min-height: 0px;
-        min-width: 0px;
-        opacity: 0;
-        background-image: none;
-        border: none;
-        box-shadow: none;
-      }
-      #pulseaudio-slider trough {
-        min-height: 80px;
-        min-width: 10px;
-        border-radius: 5px;
-        background-color: ${c.withHashtag.base01};
-      }
-      #pulseaudio-slider highlight {
-        min-width: 10px;
-        border-radius: 5px;
-        background-color: ${c.withHashtag.base0D};
-      }
-
       #pulseaudio {
+        font-size: 18px;
         color: ${c.withHashtag.base0D};
         background-color: ${c.withHashtag.base00};
       }
@@ -185,6 +184,25 @@ in
       #pulseaudio.muted {
         color: ${c.withHashtag.base08};
         background-color: ${c.withHashtag.base00};
+      }
+
+      #backlight {
+        font-size: 19px;
+        color: ${c.withHashtag.base0A};
+      }
+
+      #bluetooth{
+        color: ${c.withHashtag.base0D};
+      }
+      #bluetooth.disabled,
+      #bluetooth.no-controller,
+      #bluetooth.off {
+        color: ${c.withHashtag.base0D};
+      }
+      #bluetooth.discoverable,
+      #bluetooth.pairable,
+      #bluetooth.discovering {
+        color: ${c.withHashtag.base0C};
       }
     '';
   };
