@@ -6,5 +6,6 @@
     tree
     neovim
     evince
+    brightnessctl
   ];
 }

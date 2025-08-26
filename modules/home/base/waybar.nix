@@ -9,18 +9,18 @@ in
     settings = {
       mainBar = {
         layer = "top";
-        position = "left";
-        margin = "20 0 20 0";
-        width = 30;
+        mode = "dock";
+        margin = "0 20 0 20";
+        height = 30;
         output = [
           "HDMI-A-3"
           "eDP-1"
         ];
 
         modules-left = [
-          "hyprland/workspaces"
         ];
         modules-center = [
+          "hyprland/workspaces"
         ];
         modules-right = [
           "tray"
@@ -32,7 +32,7 @@ in
         ];
 
         "clock" = {
-          format = "{:%H\n%M}";
+          format = "{:%H:%M}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
             mode = "month";
@@ -47,16 +47,14 @@ in
         };
 
         "battery" = {
-          rotate = 270;
           states = {
             warning = 30;
             critical = 10;
           };
-          format = "{icon}";
-          format-charging = "󰂄";
-          format-full = "󰁹";
+          format = "{icon} {capacity}%";
+          format-time = "{H} hr {M} min";
           format-icons = [
-            "󰁺"
+            "󰂎"
             "󰁻"
             "󰁼"
             "󰁽"
@@ -67,15 +65,24 @@ in
             "󰂂"
             "󰁹"
           ];
-          tooltip-format = "{timeTo} {capacity} %";
+          format-charging = "󰉁 {capacity}%";
+          min-length = 7;
+          max-length = 7;
+          tooltip-format = "Discharging: {time}";
+          tooltip-format-charging = "Charging: {time}";
+          events = {
+            on-discharging-warning = "notify-send 'Low Battery' '{capacity}% battery remaining'";
+            on-discharging-critical = "notify-send 'Low Battery' '{capacity}% battery remaining' -u critical";
+            on-charging-100 = "notify-send 'Battery full' 'Battery is at {capacity}%'";
+          };
         };
 
         "pulseaudio" = {
           states = {
             silent = 0;
           };
-          format = "{icon}";
-          format-bluetooth = "{icon}";
+          format = "{icon} {volume}%";
+          format-bluetooth = "{volume}% {icon}";
           format-muted = "󰝟";
           format-silent = "󰸈";
           format-icons = {
@@ -101,15 +108,22 @@ in
         };
 
         "backlight" = {
-          device = "intel_backlight";
-          format = "{icon}";
-          tooltip-format = "{percent}% {icon}";
+          format = "{icon} {percent}%";
           format-icons = [
-            "󰃚"
-            "󰃞"
-            "󰃟"
-            "󰃠"
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
           ];
+          min-length = 7;
+          max-length = 7;
+          on-scroll-up = "brightnessctl set 1%+";
+          on-scroll-down = "brightnessctl set 1%-";
         };
 
         "bluetooth" = {
@@ -125,12 +139,16 @@ in
           tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_battery_percentage}%";
         };
       };
+
+      "tray" = {
+        reverse-direction = true;
+      };
     };
 
     style = ''
       * {
         font-family: ${config.stylix.fonts.emoji.name};
-        font-size: 14px;
+        font-size: 16px;
         padding: 0px;
         margin: 0px;
       }
@@ -143,10 +161,21 @@ in
       }
 
       .modules-right {
-        margin-bottom: 5px;
+        margin-right: 7px;
+      }
+
+      #workspaces,
+      #clock,
+      #battery,
+      #pulseaudio,
+      #backlight,
+      #bluetooth {
+        margin-left: 5px;
       }
 
       #workspaces button {
+        padding-left: 5px;
+        padding-right: 5px;
         background-color: ${c.withHashtag.base00};
       }
       #workspaces button:hover {
@@ -161,7 +190,6 @@ in
       #clock {
         color: ${c.withHashtag.base0D};
         font-weight: bold;
-        font-size: 18px;
       }
 
       #battery {
@@ -176,7 +204,6 @@ in
       }
 
       #pulseaudio {
-        font-size: 18px;
         color: ${c.withHashtag.base0D};
         background-color: ${c.withHashtag.base00};
       }
@@ -187,8 +214,10 @@ in
       }
 
       #backlight {
-        font-size: 19px;
         color: ${c.withHashtag.base0A};
+      }
+      #backlight.icon {
+        font-size: 30px; /* adjust as needed */
       }
 
       #bluetooth{
