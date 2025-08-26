@@ -12,13 +12,6 @@
         "git"
       ];
     };
-
-    shellAliases = {
-      e = "exa";
-      ee = "exa -algm";
-      ea = "exa -a";
-    };
-
   };
 
   programs.starship.enable = true;
