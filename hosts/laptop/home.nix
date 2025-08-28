@@ -7,6 +7,7 @@
     ../../modules/home/apps/firefox.nix
     ../../modules/home/apps/anki.nix
     ../../modules/home/apps/security.nix
+    ../../modules/home/apps/office.nix
     ../../modules/home/stylix.nix
   ];
 
