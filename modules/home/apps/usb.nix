@@ -2,9 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    nautilus
-    gimp
-    system-config-printer
-    simple-scan
+    gparted
   ];
+
+  services.udiskie = {
+    enable = true;
+  };
 }

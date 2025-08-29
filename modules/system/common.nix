@@ -10,5 +10,7 @@
     ./locale.nix
     ./users.nix
     ./stylix.nix
+    ./printer.nix
+    ./usb.nix
   ];
 }
