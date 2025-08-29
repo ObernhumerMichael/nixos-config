@@ -16,5 +16,4 @@
     enable = true;
     wayland.enable = true;
   };
-
 }

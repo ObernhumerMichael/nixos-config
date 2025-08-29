@@ -6,6 +6,8 @@
 }:
 
 {
+  services.hyprpolkitagent.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -28,6 +30,7 @@
     ./base/looks.nix
     ./base/animations.nix
     ./base/other.nix
+    ./base/autostart.nix
     ./plugins/hyprexpo.nix
   ];
 }

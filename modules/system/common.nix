@@ -12,5 +12,6 @@
     ./stylix.nix
     ./printer.nix
     ./usb.nix
+    ./security.nix
   ];
 }
