@@ -4,6 +4,7 @@
     neofetch
     htop
     fastfetch
+    unzip
   ];
 
   imports = [
