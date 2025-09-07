@@ -7,4 +7,9 @@
     system-config-printer
     simple-scan
   ];
+
+  services.nextcloud-client = {
+    enable = true;
+    startInBackground = true;
+  };
 }
