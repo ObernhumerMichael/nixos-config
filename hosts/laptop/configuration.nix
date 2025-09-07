@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../../modules/system/common.nix
     ../../modules/system/desktop/hyprland.nix
+    # ../../modules/system/desktop/gnome.nix
   ];
 
   networking.hostName = "laptop";
