@@ -11,5 +11,6 @@
     curl
     git
     vim
+    imagemagick
   ];
 }

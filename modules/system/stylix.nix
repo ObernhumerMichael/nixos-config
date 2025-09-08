@@ -1,10 +1,44 @@
-{ config, pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
+let
+  theme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  sourceImage = ../../wallpapers/nix-center.png;
+
+  recolored = pkgs.runCommand "recolored-wallpaper.png" { } ''
+    set -euo pipefail
+
+    # Extract base16 palette into an image colormap.png
+    COLORS="$(${lib.getExe pkgs.yq} -r '.palette | to_entries | .[].value' ${theme})"
+
+    if [ -z "$COLORS" ]; then
+      echo "No colors extracted from theme!" >&2
+      exit 1
+    fi
+
+    rm -f colormap.txt
+    for C in $COLORS; do
+      echo "xc:$C" >> colormap.txt
+    done
+
+    # Build colormap image by stacking them horizontally
+    ${lib.getExe pkgs.imagemagick} $(cat colormap.txt) +append colormap.png
+
+    # Quantize source image to those theme colors (colormap remap)
+    ${lib.getExe pkgs.imagemagick} ${sourceImage} +dither -remap colormap.png $out
+  '';
+in
 {
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    image = ../../wallpapers/catppuccin.png;
+    # image = recolored;
+    base16Scheme = theme;
 
     fonts = {
       serif = {
