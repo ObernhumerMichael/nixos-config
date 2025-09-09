@@ -37,6 +37,11 @@ in
           "terminal.integrated.tabs.enabled" = false;
           "git.enableSmartCommit" = true;
 
+          "editor.rulers" = [
+            80
+            120
+          ];
+
           "vim.normalModeKeyBindingsNonRecursive" = [
             {
               "before" = [ "s" ];

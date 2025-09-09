@@ -37,6 +37,7 @@ in
     enable = true;
 
     image = ../../wallpapers/catppuccin.png;
+    # Use recolored to repaint a wallpaper into the colors of the current base16 theme.
     # image = recolored;
     base16Scheme = theme;
 
