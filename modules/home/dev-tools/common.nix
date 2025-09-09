@@ -5,6 +5,6 @@
   ];
 
   imports = [
-    ./base/vscode.nix
+    ./vscode.nix
   ];
 }
