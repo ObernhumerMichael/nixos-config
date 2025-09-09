@@ -18,7 +18,6 @@
 
   imports = [
     ./base/keybindings.nix
-    ./base/env.nix
     ./base/inputs.nix
     ./base/layouts.nix
     ./base/monitors.nix

@@ -12,9 +12,17 @@
     ../../modules/home/stylix.nix
   ];
 
-  home.username = "user";
-  home.homeDirectory = "/home/user";
-  home.stateVersion = "25.05";
+  home = {
+    username = "user";
+    homeDirectory = "/home/user";
+    stateVersion = "25.05";
+
+    sessionVariables = {
+      EDITOR = "vim";
+      BROWSER = "firefox";
+      PATH = "$HOME/bin:$PATH";
+    };
+  };
 
   programs.home-manager.enable = true;
 }

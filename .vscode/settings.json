@@ -9,6 +9,7 @@
         "system",
         "base",
         "dep",
-        "hypr"
+        "hypr",
+        "hosts"
     ]
 }
