@@ -11,5 +11,6 @@
     ./base/btop.nix
     ./base/zoxide.nix
     ./base/eza.nix
+    ./base/tmux.nix
   ];
 }
