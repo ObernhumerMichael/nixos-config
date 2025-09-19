@@ -5,6 +5,9 @@
     htop
     fastfetch
     unzip
+    rsync
+    net-tools
+    dig
   ];
 
   imports = [
