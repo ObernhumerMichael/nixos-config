@@ -26,6 +26,5 @@
     ./base/animations.nix
     ./base/other.nix
     ./base/autostart.nix
-    ./plugins/hyprexpo.nix
   ];
 }
