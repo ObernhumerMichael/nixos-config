@@ -12,4 +12,6 @@
     enable = true;
     startInBackground = true;
   };
+
+  programs.ranger.enable = true;
 }
