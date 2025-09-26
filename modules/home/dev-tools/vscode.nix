@@ -1,6 +1,6 @@
 {
   config,
-  pgks,
+  pkgs,
   lib,
   ...
 }:
@@ -11,6 +11,7 @@ in
 {
   programs.vscode = {
     enable = true;
+    package = pkgs.vscode-fhs;
 
     profiles = {
       default = {
@@ -53,6 +54,7 @@ in
             }
           ];
           "vim.useSystemClipboard" = true;
+          "redhat.telemetry.enabled" = false;
         };
       };
     };

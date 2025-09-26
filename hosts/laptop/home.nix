@@ -14,7 +14,8 @@
     sessionVariables = {
       EDITOR = "vim";
       BROWSER = "firefox";
-      PATH = "$HOME/bin:$PATH";
+      JAVA_HOME = "${pkgs.jdk21}";
+      PATH = "${pkgs.jdk21}/bin:$HOME/bin:$PATH";
     };
   };
 
