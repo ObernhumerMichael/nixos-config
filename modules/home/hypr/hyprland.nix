@@ -26,5 +26,6 @@
     ./base/animations.nix
     ./base/other.nix
     ./base/autostart.nix
+    ./ecosystem/hyprlock.nix
   ];
 }

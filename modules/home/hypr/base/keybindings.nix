@@ -16,6 +16,7 @@
 
       # Applications
       "$mod, R, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi" # application launcher
+      "$mod ALT, L, exec, hyprlock" # lock screen
 
       # Move focus
       "$mod, h, movefocus, l"
