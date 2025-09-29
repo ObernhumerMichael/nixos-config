@@ -4,6 +4,7 @@
     exec-once = [
       "systemctl --user start hyprpolkitagent"
       "waybar"
+      "nm-applet"
     ];
   };
 }

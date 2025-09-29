@@ -8,6 +8,7 @@
     rsync
     net-tools
     dig
+    zip
   ];
 
   imports = [
