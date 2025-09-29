@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./firefox.nix
     ./anki.nix
     ./obsidian.nix
     ./security.nix

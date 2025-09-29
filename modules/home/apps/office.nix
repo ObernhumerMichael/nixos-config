@@ -6,6 +6,7 @@
     gimp
     system-config-printer
     simple-scan
+    brave
   ];
 
   services.nextcloud-client = {
