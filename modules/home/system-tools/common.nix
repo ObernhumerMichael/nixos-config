@@ -9,6 +9,7 @@
     net-tools
     dig
     zip
+    speedtest-cli
   ];
 
   imports = [
