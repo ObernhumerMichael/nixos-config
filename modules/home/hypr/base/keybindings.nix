@@ -18,6 +18,17 @@
       "$mod, R, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi" # application launcher
       "$mod ALT, L, exec, hyprlock" # lock screen
 
+      # SCREENSHOTS
+      # Area selection
+      "bind = $mod, S, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+      # Currently ative window
+      "bind = $mod SHIFT, S, exec, grimblast copysave active ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+      # Full screen (current monitor)
+      "bind = $mod ALT, S, exec, grimblast copysave output ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+
+      # Full screen (all monitors)
+      # bind = SUPER SHIFT, S, exec, grimblast copysave screen ~/Pictures/Screenshots/screenshot_$(date "+%Y-%m-%d-%H-%M-%S").png
+
       # Move focus
       "$mod, h, movefocus, l"
       "$mod, l, movefocus, r"

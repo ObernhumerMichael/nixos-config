@@ -8,6 +8,10 @@
 {
   services.hyprpolkitagent.enable = true;
 
+  home.packages = with pkgs; [
+    grimblast
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
   };
