@@ -7,5 +7,7 @@
     ./security.nix
     ./office.nix
     ./usb.nix
+    ./social.nix
+    ./spotify.nix
   ];
 }
