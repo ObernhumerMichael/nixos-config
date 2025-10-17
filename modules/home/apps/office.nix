@@ -7,6 +7,10 @@
     system-config-printer
     simple-scan
     brave
+    libreoffice-qt
+    hunspell
+    hunspellDicts.de_AT
+    hunspellDicts.en_US
   ];
 
   services.nextcloud-client = {

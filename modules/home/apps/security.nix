@@ -6,5 +6,6 @@
     veracrypt
     yubioath-flutter
     yubikey-manager
+    tor-browser
   ];
 }
