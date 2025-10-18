@@ -35,11 +35,18 @@ in
 {
   stylix = {
     enable = true;
+    autoEnable = true;
 
     image = ../../wallpapers/catppuccin.png;
     # Use recolored to repaint a wallpaper into the colors of the current base16 theme.
     # image = recolored;
     base16Scheme = theme;
+
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
+    };
 
     fonts = {
       serif = {
