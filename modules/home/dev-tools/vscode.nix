@@ -55,6 +55,7 @@ in
           ];
           "vim.useSystemClipboard" = true;
           "redhat.telemetry.enabled" = false;
+          "latex-workshop.formatting.latex" = "latexindent";
         };
       };
     };

@@ -2,15 +2,20 @@
 {
   programs.git = {
     enable = true;
-    diff-so-fancy.enable = true;
 
-    userName = "Michael Obernhumer";
-    userEmail = "michaelobernhumer@gmail.com";
-
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Michael Obernhumer";
+        email = "michaelobernhumer@gmail.com";
+      };
       color.ui = "auto";
       init.defaultBranch = "main";
       pull.rebase = false;
     };
   };
+
+  programs.diff-so-fancy = {
+    enable = true;
+  };
 }
+
