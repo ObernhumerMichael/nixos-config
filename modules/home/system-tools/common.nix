@@ -17,5 +17,6 @@
     ./base/zoxide.nix
     ./base/eza.nix
     ./base/tmux.nix
+    ./base/bat.nix
   ];
 }
