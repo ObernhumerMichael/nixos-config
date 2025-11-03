@@ -18,5 +18,6 @@
     ./base/eza.nix
     ./base/tmux.nix
     ./base/bat.nix
+    ./base/ripgrep.nix
   ];
 }
