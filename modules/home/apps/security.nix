@@ -7,5 +7,6 @@
     yubioath-flutter
     yubikey-manager
     tor-browser
+    openconnect
   ];
 }
