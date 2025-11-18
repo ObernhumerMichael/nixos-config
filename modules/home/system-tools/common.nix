@@ -19,5 +19,6 @@
     ./base/tmux.nix
     ./base/bat.nix
     ./base/ripgrep.nix
+    ./base/tldr.nix
   ];
 }
