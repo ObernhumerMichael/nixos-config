@@ -20,5 +20,6 @@
     ./base/bat.nix
     ./base/ripgrep.nix
     ./base/tldr.nix
+    ./base/fzf.nix
   ];
 }
