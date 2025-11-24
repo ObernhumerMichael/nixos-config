@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland.settings = {
     general = {
       gaps_in = 5;
-      gaps_out = 20;
+      gaps_out = 10;
       border_size = 2;
 
       # Set to true enable resizing windows by clicking and dragging on borders and gaps
