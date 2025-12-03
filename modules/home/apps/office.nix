@@ -11,6 +11,7 @@
     hunspell
     hunspellDicts.de_AT
     hunspellDicts.en_US
+    google-chrome
   ];
 
   services.nextcloud-client = {
