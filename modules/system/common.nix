@@ -13,5 +13,7 @@
     ./printer.nix
     ./usb.nix
     ./security.nix
+    ./battery.nix
+    ./gc.nix
   ];
 }
