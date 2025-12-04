@@ -4,8 +4,6 @@
   imports = [
     ../../modules/home/common.nix
     ../../modules/home/hypr/hyprland.nix
-    ../../modules/home/dev-tools/uni.nix
-    ../../modules/home/apps/firefox.nix
   ];
 
   home = {

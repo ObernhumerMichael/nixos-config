@@ -1,25 +1,28 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
+
 {
   home.packages = with pkgs; [
     neofetch
     htop
+
     fastfetch
-    unzip
-    rsync
     net-tools
     dig
-    zip
     speedtest-cli
+
+    unzip
+    zip
+    rsync
   ];
 
   imports = [
-    ./base/btop.nix
-    ./base/zoxide.nix
-    ./base/eza.nix
-    ./base/tmux.nix
-    ./base/bat.nix
-    ./base/ripgrep.nix
-    ./base/tldr.nix
-    ./base/fzf.nix
+    ./btop.nix
+    ./zoxide.nix
+    ./eza.nix
+    ./tmux.nix
+    ./bat.nix
+    ./ripgrep.nix
+    ./tldr.nix
+    ./fzf.nix
   ];
 }

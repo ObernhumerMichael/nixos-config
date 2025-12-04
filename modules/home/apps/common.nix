@@ -3,11 +3,21 @@
 {
   imports = [
     ./anki.nix
-    ./obsidian.nix
     ./security.nix
     ./office.nix
     ./usb.nix
-    ./social.nix
     ./spotify.nix
+    ./science.nix
+    ./firefox.nix
   ];
+
+  home.packages = with pkgs; [
+    (discord.override {
+      withVencord = true;
+    })
+  ];
+
+  programs.obsidian = {
+    enable = true;
+  };
 }
