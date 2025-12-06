@@ -9,6 +9,7 @@
     net-tools
     dig
     speedtest-cli
+    mtr
 
     unzip
     zip

@@ -6,6 +6,7 @@
     thunderbird
     gimp
     evince
+    zoom-us
 
     system-config-printer
     simple-scan
