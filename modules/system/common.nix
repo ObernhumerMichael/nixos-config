@@ -15,5 +15,6 @@
     ./security.nix
     ./battery.nix
     ./gc.nix
+    ./system-audio.nix
   ];
 }

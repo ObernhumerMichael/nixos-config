@@ -9,6 +9,7 @@
     ./spotify.nix
     ./science.nix
     ./firefox.nix
+    ./media.nix
   ];
 
   home.packages = with pkgs; [
