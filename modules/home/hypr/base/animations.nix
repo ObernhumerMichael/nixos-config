@@ -5,28 +5,39 @@
       enabled = true;
 
       bezier = [
-        "wind, 0.05, 0.9, 0.1, 1.05"
-        "winIn, 0.1, 1.1, 0.1, 1.1"
-        "winOut, 0.3, -0.3, 0, 1"
-        "liner, 1, 1, 1, 1"
-        "overshot, 0.05, 0.9, 0.1, 1.05"
-        "smoothOut, 0.5, 0, 0.99, 0.99"
-        "smoothIn, 0.5, -0.5, 0.68, 1.5"
+        # Main motion curve – smooth, slightly weighted
+        "easeOut, 0.22, 1, 0.36, 1"
+
+        # Fast entry, gentle settle
+        "easeInOut, 0.4, 0, 0.2, 1"
+
+        # Subtle overshoot without wobble
+        "softOvershoot, 0.25, 1.05, 0.4, 1"
+
+        # Linear fallback
+        "linear, 1, 1, 1, 1"
       ];
 
       animation = [
-        "windows, 1, 6, wind, slide"
-        "windowsIn, 1, 5, winIn, slide"
-        "windowsOut, 1, 3, smoothOut, slide"
-        "windowsMove, 1, 5, wind, slide"
-        "border, 1, 1, liner"
-        "borderangle, 1, 180, liner, loop" # used by rainbow borders and rotating colors
-        "fade, 1, 3, smoothOut"
-        "workspaces, 1, 5, overshot"
-        "workspacesIn, 1, 5, winIn, slide"
-        "workspacesOut, 1, 5, winOut, slide"
-      ];
+        # Windows
+        "windows, 1, 4, easeOut, slide"
+        "windowsIn, 1, 4, easeOut, slide"
+        "windowsOut, 1, 3, easeInOut, slide"
+        "windowsMove, 1, 4, easeOut, slide"
 
+        # Borders
+        "border, 1, 2, linear"
+        # "borderangle, 1, 120, linear, loop"
+        "borderangle, 0"
+
+        # Fade
+        "fade, 1, 3, easeInOut"
+
+        # Workspaces
+        "workspaces, 1, 4, softOvershoot, slidefade 20%"
+        "workspacesIn, 1, 4, easeOut, slidefade 20%"
+        "workspacesOut, 1, 3, easeInOut, slidefade 20%"
+      ];
     };
   };
 }
