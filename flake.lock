@@ -160,6 +160,22 @@
         "type": "github"
       }
     },
+    "mechabar": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765544101,
+        "narHash": "sha256-f/Aiku8oG/AG+07qfY95TPnYlzD9//CrUflj2cxJHEY=",
+        "owner": "sejjy",
+        "repo": "mechabar",
+        "rev": "852f696f4d5c00e663bd6b45d8ef968cde543885",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sejjy",
+        "repo": "mechabar",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1765779637,
@@ -204,6 +220,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "mechabar": "mechabar",
         "nixpkgs": "nixpkgs",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix"

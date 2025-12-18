@@ -14,6 +14,7 @@
     unzip
     zip
     rsync
+    wl-clipboard
   ];
 
   imports = [

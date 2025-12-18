@@ -14,6 +14,6 @@
     ./git.nix
     ./kitty.nix
     ./rofi.nix
-    ./waybar.nix
+    ./waybar/waybar.nix
   ];
 }
