@@ -48,6 +48,17 @@ in
       size = 24;
     };
 
+    icons = {
+      enable = true;
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "blue"; # Options: blue, flamingo, mauve, pink, etc.
+      };
+      # Note: Stylix uses these names to set GTK icon themes
+      light = "Papirus-Dark"; # Papirus-Dark usually looks better even on light themes
+      dark = "Papirus-Dark";
+    };
+
     fonts = {
       serif = {
         package = pkgs.inter;
