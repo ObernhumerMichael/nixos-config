@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     nixfmt-rfc-style
-    jetbrains.idea-community
+    jetbrains.idea
   ];
 
   imports = [
