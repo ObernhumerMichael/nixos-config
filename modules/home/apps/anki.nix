@@ -3,6 +3,7 @@
 {
   programs.anki = {
     enable = true;
+    theme = "dark";
     addons = [
       (pkgs.ankiAddons.anki-connect.withConfig {
         config = {
