@@ -17,6 +17,8 @@
       # Applications
       "$mod, R, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi" # application launcher
       "$mod ALT, L, exec, hyprlock" # lock screen
+      "$mod, B, exec, brave" # browser
+      "$mod, E, exec, nautilus" # file manager
 
       # SCREENSHOTS
       # Area selection
