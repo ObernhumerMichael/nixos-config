@@ -6,6 +6,7 @@
     tree
     neovim
     brightnessctl
+    ddcutil
   ];
 
   imports = [

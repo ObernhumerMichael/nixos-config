@@ -5,27 +5,27 @@
     ../../modules/system/common.nix
     ../../modules/system/nvidia.nix
     ../../modules/system/desktop/hyprland.nix
-    # ../../modules/system/desktop/gnome.nix
   ];
 
   networking.hostName = "laptop";
 
-  # Disable systemd-boot
-  boot.loader.systemd-boot.enable = false;
+  boot = {
+    loader = {
+      systemd-boot.enable = false;
 
-  # Enable GRUB
-  boot.loader.grub = {
-    enable = true;
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+      };
+      efi.canTouchEfiVariables = true;
+    };
 
-    # If EFI system:
-    efiSupport = true;
-    device = "nodev";
+    initrd.luks.devices."luks-282bd651-de34-4805-a7e1-dd3371cc8add".device =
+      "/dev/disk/by-uuid/282bd651-de34-4805-a7e1-dd3371cc8add";
   };
 
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.initrd.luks.devices."luks-282bd651-de34-4805-a7e1-dd3371cc8add".device =
-    "/dev/disk/by-uuid/282bd651-de34-4805-a7e1-dd3371cc8add";
+  hardware.i2c.enable = true;
 
   time.timeZone = "Europe/Vienna";
 
