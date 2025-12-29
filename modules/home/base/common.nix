@@ -14,5 +14,6 @@
     ./kitty.nix
     ./rofi.nix
     ./waybar/waybar.nix
+    ./dunst.nix
   ];
 }
