@@ -13,6 +13,7 @@
     brightnessctl
     ddcutil
     playerctl
+    wev
   ];
 
   wayland.windowManager.hyprland = {

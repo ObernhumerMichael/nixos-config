@@ -20,11 +20,11 @@
 
       # SCREENSHOTS
       # Area selection
-      "bind = $mod, S, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+      "$mod, S, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
       # Currently ative window
-      "bind = $mod SHIFT, S, exec, grimblast copysave active ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+      "$mod SHIFT, S, exec, grimblast copysave active ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
       # Full screen (current monitor)
-      "bind = $mod ALT, S, exec, grimblast copysave output ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+      "$mod ALT, S, exec, grimblast copysave output ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
 
       # Full screen (all monitors)
       # bind = SUPER SHIFT, S, exec, grimblast copysave screen ~/Pictures/Screenshots/screenshot_$(date "+%Y-%m-%d-%H-%M-%S").png
@@ -66,6 +66,24 @@
       # Move/resize windows with mainMod + LMB/RMB and dragging
       "$mod, mouse:272, movewindow"
       # "$mod, mouse:273, resizewindow"
+
+      # Multimedia keys
+      ",XF86Calculator, exec, qalculate-qt"
+      ",XF86Explorer, exec, thunar"
+      ",XF86Search, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"
+      ", Print, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+
+      ",XF86Screenshot, exec, grimblast copysave screen ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+      "SHIFT,XF86Screenshot, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+
+      ",XF86WWW, exec, brave"
+      ",XF86Mail, exec, thunderbird"
+
+      ",XF86ScreenSaver, exec, hyprlock"
+      ",XF86Sleep, exec, systemctl suspend"
+
+      ",XF86Favorites, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"
+      ",XF86Launch1, exec, kitty"
     ]
     ++ (
       # workspaces
