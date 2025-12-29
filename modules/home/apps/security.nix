@@ -10,6 +10,8 @@
 
     tor-browser
     openconnect
+
+    seahorse
   ];
 
   programs.gpg.enable = true;

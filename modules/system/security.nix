@@ -16,4 +16,7 @@
   };
 
   services.pcscd.enable = true; # Required for YubiKey smartcard
+
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;
 }

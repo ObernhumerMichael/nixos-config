@@ -6,6 +6,7 @@
     thunderbird
     gimp
     evince
+    pdfarranger
     zoom-us
 
     system-config-printer

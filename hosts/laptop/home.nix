@@ -17,6 +17,7 @@
       JAVA_HOME = "${pkgs.jdk21}";
       PATH = "${pkgs.jdk21}/bin:$HOME/bin:$PATH";
       GPG_TTY = "$(tty)";
+      SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
     };
   };
 
