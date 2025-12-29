@@ -10,6 +10,9 @@
 
   home.packages = with pkgs; [
     grimblast
+    brightnessctl
+    ddcutil
+    playerctl
   ];
 
   wayland.windowManager.hyprland = {

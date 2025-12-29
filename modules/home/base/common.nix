@@ -5,8 +5,6 @@
   home.packages = with pkgs; [
     tree
     neovim
-    brightnessctl
-    ddcutil
   ];
 
   imports = [
