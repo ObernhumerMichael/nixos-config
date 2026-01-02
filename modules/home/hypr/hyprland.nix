@@ -32,5 +32,6 @@
     ./base/autostart.nix
     ./ecosystem/hyprlock.nix
     ./ecosystem/hyprsunset.nix
+    ./ecosystem/pyprland.nix
   ];
 }

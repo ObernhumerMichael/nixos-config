@@ -18,6 +18,14 @@
       "$mod, P, pseudo"
 
       # ───────────────
+      # pyprland plugins
+      # ───────────────
+      # Toggle terminal scratchpad
+      "$mod SHIFT, Return, exec, pypr toggle term"
+      # Toggle magnifier on the focused window
+      "$mod, Z, exec, pypr zoom"
+
+      # ───────────────
       # Launchers & apps
       # ───────────────
       "$mod, R, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"

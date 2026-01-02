@@ -31,6 +31,16 @@
       "match:class ^(GeoGebra)$, center on"
 
       # ============================================================
+      # Dropdown terminal (pyprland)
+      # ============================================================
+
+      "float on, match:class kitty-dropterm"
+      "pin on, match:class kitty-dropterm"
+      "size 75% 60%, match:class kitty-dropterm"
+      "move (monitor_w*0.125) 0, match:class kitty-dropterm"
+      "stay_focused on, match:class kitty-dropterm"
+
+      # ============================================================
       # VS Code (title-safe)
       # ============================================================
 
