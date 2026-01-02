@@ -44,12 +44,6 @@
         special = true;
         vibrancy = 0.1696;
       };
-
     };
-
-    layerrule = [
-      "blur, wallpaper-selector"
-      "blur, logout_dialog"
-    ];
   };
 }

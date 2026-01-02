@@ -1,43 +1,85 @@
 { config, pkgs, ... }:
 {
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
-      "move 72% 7%,title:^(Picture-in-Picture)$ "
-      "center,title:^(Visual Studio Code)$ "
-      "center,title:^(Save File)$ "
-      "center,title:^(GeoGebra)$ "
-      "center,class:^(Code)$ "
 
-      # windowrule v2 to avoid idle for fullscreen apps
-      "idleinhibit fullscreen, class:^(*)$"
-      "idleinhibit fullscreen, title:^(*)$"
-      "idleinhibit fullscreen, fullscreen:1"
+    windowrule = [
 
-      # windowrule v2 - float
-      "float, title:^(Picture-in-Picture)$"
+      # ============================================================
+      # Picture-in-Picture (robust, tag-based)
+      # ============================================================
 
-      # windowrule v2 - opacity
-      # "opacity 0.9 0.8, class:^(Alacritty|kitty|kitty-dropterm)$ # Terminals"
+      # Tag PiP windows (dynamic tag)
+      "match:title ^(Picture-in-Picture)$, tag +pip"
 
-      # windowrule v2 - size
-      "size 25% 25%, title:^(Picture-in-Picture)$"
-      "size 25% 50%, class:protonvpn-app"
-      "size 50% 50%,title:^(Image Information — Gwenview)$ "
+      # PiP behavior
+      "match:tag pip*, float on"
+      "match:tag pip*, pin on"
+      "match:tag pip*, keep_aspect_ratio on"
+      "match:tag pip*, size (monitor_w*0.25) (monitor_h*0.25)"
+      "match:tag pip*, move (monitor_w*0.72) (monitor_h*0.07)"
 
-      # windowrule v2 - pinning
-      "pin,title:^(Picture-in-Picture)$"
+      # ============================================================
+      # Centered dialogs & tools
+      # ============================================================
 
-      # windowrule v2 - extras
-      "keepaspectratio, title:^(Picture-in-Picture)$"
+      # Generic dialogs
+      "match:modal true, center on"
+      "match:title ^(Save File)$, center on"
 
-      # Ignore maximize requests from apps. You'll probably like this.
-      "suppressevent maximize, class:.*"
+      # Tools that behave badly tiled
+      "match:class ^(GeoGebra)$, float on"
+      "match:class ^(GeoGebra)$, center on"
 
-      # Fix some dragging issues with XWayland
-      "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+      # ============================================================
+      # VS Code (title-safe)
+      # ============================================================
+
+      "match:class ^(Code)$, no_initial_focus on"
+      "match:class ^(Code)$, tag +code"
+
+      # ============================================================
+      # ProtonVPN
+      # ============================================================
+
+      "match:class ^(protonvpn-app)$, float on"
+      "match:class ^(protonvpn-app)$, size (monitor_w*0.25) (monitor_h*0.5)"
+      "match:class ^(protonvpn-app)$, center on"
+      "match:class ^(protonvpn-app)$, tag +utility"
+
+      # ============================================================
+      # Gwenview image info
+      # ============================================================
+
+      "match:title ^(Image Information — Gwenview)$, float on"
+      "match:title ^(Image Information — Gwenview)$, size (monitor_w*0.5) (monitor_h*0.5)"
+      "match:title ^(Image Information — Gwenview)$, center on"
+
+      # ============================================================
+      # Idle inhibit (correct & minimal)
+      # ============================================================
+
+      # Only inhibit when actually fullscreen
+      "match:fullscreen true, idle_inhibit fullscreen"
+
+      # ============================================================
+      # Suppress annoying app behavior
+      # ============================================================
+
+      # Ignore maximize requests globally
+      "match:class .*, suppress_event maximize"
+
+      # ============================================================
+      # XWayland focus & drag fixes
+      # ============================================================
+
+      "match:xwayland true, match:float true, no_focus on"
+      "match:xwayland true, match:float true, no_follow_mouse on"
     ];
 
-    # Assigning workspace to a certain monitor
+    # ============================================================
+    # Workspace → monitor mapping
+    # ============================================================
+
     workspace = [
       "1, monitor:eDP-1"
       "2, monitor:desc:ASUSTek COMPUTER INC VG27AQ1A LBLMQS008039, default:true"
