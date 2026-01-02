@@ -6,86 +6,86 @@
     "$editor" = "nvim";
 
     bind = [
-      # General Keybindings
+      # ───────────────
+      # System
+      # ───────────────
       "CTRL ALT, Delete, exec, hyprctl dispatch exit 0"
+
       "$mod, Q, killactive"
       "$mod, Return, exec, $terminal"
       "$mod, F, fullscreen"
       "$mod SHIFT, F, togglefloating"
-      "$mod, P, pseudo" # dwindle
+      "$mod, P, pseudo"
 
-      # Applications
-      "$mod, R, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi" # application launcher
-      "$mod ALT, L, exec, hyprlock" # lock screen
-      "$mod, B, exec, brave" # browser
-      "$mod, E, exec, nautilus" # file manager
+      # ───────────────
+      # Launchers & apps
+      # ───────────────
+      "$mod, R, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"
+      "$mod ALT, L, exec, hyprlock"
+      "$mod, B, exec, brave"
+      "$mod, E, exec, nautilus"
 
-      # SCREENSHOTS
-      # Area selection
+      # ───────────────
+      # Screenshots
+      # ───────────────
       "$mod, S, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
-      # Currently ative window
       "$mod SHIFT, S, exec, grimblast copysave active ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
-      # Full screen (current monitor)
       "$mod ALT, S, exec, grimblast copysave output ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
 
-      # Full screen (all monitors)
-      # bind = SUPER SHIFT, S, exec, grimblast copysave screen ~/Pictures/Screenshots/screenshot_$(date "+%Y-%m-%d-%H-%M-%S").png
-
-      # Move focus
+      # ───────────────
+      # Focus movement (vim-style)
+      # ───────────────
       "$mod, h, movefocus, l"
       "$mod, l, movefocus, r"
       "$mod, k, movefocus, u"
       "$mod, j, movefocus, d"
 
+      # ───────────────
       # Move windows
+      # ───────────────
       "$mod CTRL, h, movewindow, l"
       "$mod CTRL, l, movewindow, r"
       "$mod CTRL, k, movewindow, u"
       "$mod CTRL, j, movewindow, d"
 
-      # Resize windows
-      "$mod SHIFT, h, resizeactive,-50 0"
-      "$mod SHIFT, l, resizeactive,50 0"
-      "$mod SHIFT, k, resizeactive,0 -50"
-      "$mod SHIFT, j, resizeactive,0 50"
+      # ───────────────
+      # Window cycling
+      # ───────────────
+      "ALT, Tab, cyclenext"
+      "ALT, Tab, bringactivetotop"
 
-      # Cycle windows if floating bring to top
-      "ALT, tab, cyclenext"
-      "ALT, tab, bringactivetotop"
+      # ───────────────
+      # Workspace navigation
+      # ───────────────
+      "$mod, Tab, workspace, m+1"
+      "$mod SHIFT, Tab, workspace, m-1"
 
-      # Cycle workspaces
-      "$mod, tab, workspace, m+1"
-      "$mod SHIFT, tab, workspace, m-1"
-
-      # Scroll through existing workspaces with mainMod + scroll
       "$mod, mouse_down, workspace, e+1"
       "$mod, mouse_up, workspace, e-1"
 
-      # Special workspace (scratchpad)
+      # ───────────────
+      # Scratchpad
+      # ───────────────
       "$mod, D, togglespecialworkspace, magic"
       "$mod SHIFT, D, movetoworkspace, special:magic"
 
-      # Move/resize windows with mainMod + LMB/RMB and dragging
-      "$mod, mouse:272, movewindow"
-      # "$mod, mouse:273, resizewindow"
-
-      # Multimedia keys
-      ",XF86Calculator, exec, qalculate-qt"
-      ",XF86Explorer, exec, thunar"
-      ",XF86Search, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"
+      # ───────────────
+      # Hardware / misc keys
+      # ───────────────
+      ", XF86Calculator, exec, qalculate-qt"
+      ", XF86Explorer, exec, thunar"
+      ", XF86Search, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"
       ", Print, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
 
-      ",XF86Screenshot, exec, grimblast copysave screen ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
-      "SHIFT,XF86Screenshot, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+      ", XF86Screenshot, exec, grimblast copysave screen ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+      "SHIFT, XF86Screenshot, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
 
-      ",XF86WWW, exec, brave"
-      ",XF86Mail, exec, thunderbird"
-
-      ",XF86ScreenSaver, exec, hyprlock"
-      ",XF86Sleep, exec, systemctl suspend"
-
-      ",XF86Favorites, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"
-      ",XF86Launch1, exec, kitty"
+      ", XF86WWW, exec, brave"
+      ", XF86Mail, exec, thunderbird"
+      ", XF86ScreenSaver, exec, hyprlock"
+      ", XF86Sleep, exec, systemctl suspend"
+      ", XF86Favorites, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"
+      ", XF86Launch1, exec, kitty"
     ]
     ++ (
       # workspaces
@@ -116,16 +116,44 @@
       "$mod CTRL, bracketright, movetoworkspacesilent, +1"
     ]);
 
+    binde = [
+      # ───────────────
+      # Resize windows
+      # ───────────────
+      "$mod SHIFT, h, resizeactive, -50 0"
+      "$mod SHIFT, l, resizeactive,  50 0"
+      "$mod SHIFT, k, resizeactive,  0 -50"
+      "$mod SHIFT, j, resizeactive,  0  50"
+    ];
+
+    binds = {
+      drag_threshold = 10;
+    };
+
+    bindm = [
+      # Drag floating window
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
+    ];
+
+    bindc = [
+      # Click = toggle floating
+      "$mod, mouse:272, togglefloating"
+    ];
+
+    # Multimedia keys that also work within the lock screen
     bindel = [
-      # Laptop multimedia keys for volume and LCD brightness
+      # volume
       ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
       ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
       ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+
+      # LCD brightness
       ",XF86MonBrightnessUp, exec, brightnessctl s 10%+ && ddcutil setvcp 10 + 10 &"
       ",XF86MonBrightnessDown, exec, brightnessctl s 10%- && ddcutil setvcp 10 - 10 &"
 
-      # Requires playerctl
+      # Requires playerctl for player control
       ", XF86AudioNext, exec, playerctl next"
       ", XF86AudioPause, exec, playerctl play-pause"
       ", XF86AudioPlay, exec, playerctl play-pause"
