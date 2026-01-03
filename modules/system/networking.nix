@@ -14,8 +14,8 @@
     firewall = {
       enable = true;
       allowPing = true;
-      allowedTCPPorts = [ 22 ];  # SSH
-      allowedUDPPorts = [ 5353 ];  # mDNS for local discovery
+      allowedTCPPorts = [ ];
+      allowedUDPPorts = [ 5353 ]; # mDNS for local discovery
     };
   };
 }
