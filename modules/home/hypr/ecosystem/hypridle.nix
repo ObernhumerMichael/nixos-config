@@ -31,8 +31,8 @@
         # --- Dim screen backlight ---
         {
           timeout = 150; # 2.5 min
-          on-timeout = "brightnessctl -s set 10";
-          on-resume = "brightnessctl -r";
+          on-timeout = "brightnessctl -s set 10 && ddcutil setvcp 10 10";
+          on-resume = "brightnessctl -r && ddcutil setvcp 10 50";
         }
 
         # --- Keyboard backlight off (optional) ---
@@ -52,7 +52,7 @@
         {
           timeout = 330; # 5.5 min
           on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
+          on-resume = "hyprctl dispatch dpms on && brightnessctl -r && ddcutil setvcp 10 50";
         }
 
         # --- Suspend system ---
