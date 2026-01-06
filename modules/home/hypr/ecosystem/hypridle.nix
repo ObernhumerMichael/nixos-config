@@ -30,27 +30,27 @@
       listener = [
         # --- Dim screen backlight ---
         {
-          timeout = 150; # 2.5 min
+          timeout = 300; # 5 min
           on-timeout = "brightnessctl -s set 10 && ddcutil setvcp 10 10";
           on-resume = "brightnessctl -r && ddcutil setvcp 10 50";
         }
 
         # --- Keyboard backlight off (optional) ---
         {
-          timeout = 150; # 2.5 min
+          timeout = 300; # 5 min
           on-timeout = "brightnessctl -sd rgb:kbd_backlight set 0";
           on-resume = "brightnessctl -rd rgb:kbd_backlight";
         }
 
         # --- Lock screen ---
         {
-          timeout = 300; # 5 min
+          timeout = 600; # 10 min
           on-timeout = "loginctl lock-session";
         }
 
         # --- Turn displays off ---
         {
-          timeout = 330; # 5.5 min
+          timeout = 630; # 10.5 min
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on && brightnessctl -r && ddcutil setvcp 10 50";
         }

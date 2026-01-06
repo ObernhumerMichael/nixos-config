@@ -38,6 +38,7 @@ in
     autoEnable = true;
 
     image = ../../wallpapers/catppuccin.png;
+    imageScalingMode = "fill"; # Options: fill, fit, stretch, center, tile
     # Use recolored to repaint a wallpaper into the colors of the current base16 theme.
     # image = recolored;
     base16Scheme = theme;
