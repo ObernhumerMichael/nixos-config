@@ -34,5 +34,6 @@
     ./ecosystem/hyprsunset.nix
     ./ecosystem/hypridle.nix
     ./ecosystem/pyprland.nix
+    ./ecosystem/hyprpaper.nix
   ];
 }
