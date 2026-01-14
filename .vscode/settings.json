@@ -11,6 +11,7 @@
         "dep",
         "hypr",
         "hosts",
-        "security"
+        "security",
+        "caelestia"
     ]
 }

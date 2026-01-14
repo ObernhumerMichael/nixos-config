@@ -32,7 +32,7 @@
     ./base/autostart.nix
     ./ecosystem/hyprlock.nix
     ./ecosystem/hyprsunset.nix
-    ./ecosystem/hypridle.nix
+    # ./ecosystem/hypridle.nix
     ./ecosystem/pyprland.nix
     ./ecosystem/hyprpaper.nix
   ];

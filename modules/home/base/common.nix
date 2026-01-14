@@ -12,8 +12,9 @@
     ./shell.nix
     ./git.nix
     ./kitty.nix
-    ./rofi.nix
-    ./waybar/waybar.nix
-    ./dunst.nix
+    # ./rofi.nix
+    # ./waybar/waybar.nix
+    # ./dunst.nix
+    ./caelestia.nix
   ];
 }

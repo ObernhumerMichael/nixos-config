@@ -26,19 +26,29 @@
       "$mod, Z, exec, pypr zoom"
 
       # ───────────────
+      # Clear notifications & lock screen
+      # ───────────────
+      "$mod, N, global, caelestia:clearNotifs"
+      "$mod SHIFT, Escape, global, caelestia:session"
+
+      # ───────────────
       # Launchers & apps
       # ───────────────
-      "$mod, R, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"
-      "$mod ALT, L, exec, hyprlock"
+      "$mod, R, global, caelestia:launcher"
+      "$mod ALT, L, global, caelestia:lock"
       "$mod, B, exec, brave"
       "$mod, E, exec, nautilus"
 
       # ───────────────
+      # Wallpaper
+      # ───────────────
+      "$mod, W, exec, caelestia wallpaper"
+
+      # ───────────────
       # Screenshots
       # ───────────────
-      "$mod, S, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
-      "$mod SHIFT, S, exec, grimblast copysave active ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
-      "$mod ALT, S, exec, grimblast copysave output ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+      "$mod SHIFT, S, global, caelestia:screenshotFreeze" # region (freeze)
+      "$mod ALT, S, global, caelestia:screenshot" # region
 
       # ───────────────
       # Focus movement (vim-style)
@@ -82,17 +92,17 @@
       # ───────────────
       ", XF86Calculator, exec, qalculate-qt"
       ", XF86Explorer, exec, thunar"
-      ", XF86Search, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"
-      ", Print, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
+      ", XF86Search, global, caelestia:launcher"
+      ", Print, exec, caelestia screenshot" # fullscreen → clipboard
 
       ", XF86Screenshot, exec, grimblast copysave screen ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
       "SHIFT, XF86Screenshot, exec, grimblast copysave area ~/Pictures/Screenshots/screenshot_$(date \"+%Y-%m-%d-%H-%M-%S\").png"
 
       ", XF86WWW, exec, brave"
       ", XF86Mail, exec, thunderbird"
-      ", XF86ScreenSaver, exec, hyprlock"
+      ", XF86ScreenSaver, global, caelestia:lock"
       ", XF86Sleep, exec, systemctl suspend"
-      ", XF86Favorites, exec, rofi -show drun -theme ~/.config/rofi/launcher.rasi"
+      ", XF86Favorites, global, caelestia:launcher"
       ", XF86Launch1, exec, kitty"
     ]
     ++ (
@@ -158,14 +168,13 @@
       ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
       # LCD brightness
-      ",XF86MonBrightnessUp, exec, brightnessctl s 10%+ && ddcutil setvcp 10 + 10 &"
-      ",XF86MonBrightnessDown, exec, brightnessctl s 10%- && ddcutil setvcp 10 - 10 &"
+      ", XF86MonBrightnessUp, global, caelestia:brightnessUp"
+      ", XF86MonBrightnessDown, global, caelestia:brightnessDown"
 
-      # Requires playerctl for player control
-      ", XF86AudioNext, exec, playerctl next"
-      ", XF86AudioPause, exec, playerctl play-pause"
-      ", XF86AudioPlay, exec, playerctl play-pause"
-      ", XF86AudioPrev, exec, playerctl previous"
+      ", XF86AudioPlay, global, caelestia:mediaToggle"
+      ", XF86AudioPause, global, caelestia:mediaToggle"
+      ", XF86AudioNext, global, caelestia:mediaNext"
+      ", XF86AudioPrev, global, caelestia:mediaPrev"
     ];
   };
 }
