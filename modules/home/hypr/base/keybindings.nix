@@ -47,8 +47,7 @@
       # ───────────────
       # Screenshots
       # ───────────────
-      "$mod SHIFT, S, global, caelestia:screenshotFreeze" # region (freeze)
-      "$mod ALT, S, global, caelestia:screenshot" # region
+      "$mod, S, global, caelestia:screenshot" # region
 
       # ───────────────
       # Focus movement (vim-style)
