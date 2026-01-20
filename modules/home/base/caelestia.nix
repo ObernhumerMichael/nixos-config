@@ -57,7 +57,9 @@ in
 
       background = {
         enabled = true;
-        desktopClock.enable = false;
+        desktopClock = {
+          enabled = true;
+        };
 
         theme = {
           enableGtk = false;
