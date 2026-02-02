@@ -13,6 +13,5 @@
     vlc
     ffmpeg
     mediainfo
-    kdePackages.kdenlive
   ];
 }
