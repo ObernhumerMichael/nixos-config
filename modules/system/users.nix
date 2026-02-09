@@ -12,6 +12,7 @@
       "audio" # sound
       "input" # input devices
       "i2c" # I2C devices
+      "vboxusers" # VirtualBox
     ];
     shell = pkgs.zsh; # default shell
   };
