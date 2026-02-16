@@ -23,6 +23,11 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -33,29 +38,29 @@
       stylix,
       spicetify-nix,
       caelestia-shell,
+      nix-vscode-extensions,
       ...
     }@inputs:
-    let
-      system = "x86_64-linux";
-    in
     {
-      nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            stylix.nixosModules.stylix
-            ./hosts/laptop/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.user = import ./hosts/laptop/home.nix;
-            }
-          ];
-        };
+      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          {
+            nixpkgs.overlays = [ inputs.nix-vscode-extensions.overlays.default ];
+            nixpkgs.config.allowUnfree = true;
+          }
+          stylix.nixosModules.stylix
+          ./hosts/laptop/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.user = import ./hosts/laptop/home.nix;
+          }
+        ];
       };
     };
 }
