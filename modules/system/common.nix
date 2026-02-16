@@ -17,5 +17,6 @@
     ./gc.nix
     ./system-audio.nix
     ./virtualisation.nix
+    ./nix-ld.nix
   ];
 }
