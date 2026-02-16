@@ -15,6 +15,7 @@
     zip
     rsync
     wl-clipboard
+    jq
   ];
 
   imports = [
