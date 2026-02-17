@@ -43,6 +43,7 @@ in
         marketplace.ms-python.python
         marketplace.ms-python.vscode-pylance
         marketplace.ms-python.vscode-python-envs
+        marketplace.ms-python.black-formatter
         marketplace.ms-vscode-remote.remote-ssh
         marketplace.ms-vscode-remote.remote-ssh-edit
         marketplace.ms-vscode.remote-explorer
