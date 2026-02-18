@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     nixfmt
-    jetbrains.idea
+    # jetbrains.idea
   ];
 
   imports = [

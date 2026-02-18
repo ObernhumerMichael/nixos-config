@@ -24,11 +24,11 @@ A modular, flake-based NixOS configuration with home-manager integration, featur
 │       └── home.nix            # User configuration
 ├── modules/                 # Reusable configuration modules
 │   ├── home/               # Home-manager modules
-│   │   ├── apps/          # Application configurations
+│   │   ├── applications/  # Application configurations
 │   │   ├── base/          # Core user settings
-│   │   ├── dev-tools/     # Development tools
+│   │   ├── dev/           # Development tools
 │   │   ├── hypr/          # Hyprland ecosystem
-│   │   └── system-tools/  # System utilities
+│   │   └── cli/           # Terminal tools
 │   └── system/            # NixOS system modules
 │       ├── desktop/       # Desktop environments
 │       └── [other]/       # System services

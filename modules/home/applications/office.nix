@@ -7,8 +7,6 @@
     gimp
     evince
     pdfarranger
-    zoom-us
-    gnome-calendar
 
     system-config-printer
     simple-scan
