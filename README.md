@@ -33,6 +33,7 @@ A modular, flake-based NixOS configuration with home-manager integration, featur
 │       ├── desktop/       # Desktop environments
 │       └── [other]/       # System services
 └── wallpapers/            # Desktop wallpapers
+└── templates/             # For dev shells
 ```
 
 ## Installation
