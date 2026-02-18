@@ -5,8 +5,5 @@
     jdk21
     maven
     gradle
-
-    # python
-    python3
   ];
 }
