@@ -12,60 +12,60 @@ in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode; # Standard VS Code (Non-FHS)
+    package = pkgs.vscode;
 
     profiles.default = {
-      extensions = [
-        marketplace.bbenoist.nix
-        marketplace.bierner.github-markdown-preview
-        marketplace.bierner.markdown-checkbox
-        marketplace.bierner.markdown-emoji
-        marketplace.bierner.markdown-footnotes
-        marketplace.bierner.markdown-mermaid
-        marketplace.bierner.markdown-preview-github-styles
-        marketplace.bierner.markdown-yaml-preamble
-        marketplace.bmewburn.vscode-intelephense-client
-        marketplace.christian-kohler.path-intellisense
-        marketplace.davidanson.vscode-markdownlint
-        marketplace.docker.docker
-        marketplace.ecmel.vscode-html-css
-        marketplace.editorconfig.editorconfig
-        marketplace.github.copilot-chat
-        marketplace.github.vscode-github-actions
-        marketplace.james-yu.latex-workshop
-        marketplace.jnoortheen.nix-ide
-        marketplace.jock.svg
-        marketplace.mads-hartmann.bash-ide-vscode
-        marketplace.matthewpi.caddyfile-support
-        marketplace.ms-azuretools.vscode-containers
-        marketplace.ms-azuretools.vscode-docker
-        marketplace.ms-python.debugpy
-        marketplace.ms-python.python
-        marketplace.ms-python.vscode-pylance
-        marketplace.ms-python.vscode-python-envs
-        marketplace.ms-python.black-formatter
-        marketplace.ms-vscode-remote.remote-ssh
-        marketplace.ms-vscode-remote.remote-ssh-edit
-        marketplace.ms-vscode.remote-explorer
-        marketplace.murloccra4ler.leap
-        marketplace.naumovs.color-highlight
-        marketplace.redhat.java
-        marketplace.streetsidesoftware.code-spell-checker
-        marketplace.streetsidesoftware.code-spell-checker-british-english
-        marketplace.streetsidesoftware.code-spell-checker-german
-        marketplace.szaldivar.szaldivar-leap
-        marketplace.vivaxy.vscode-conventional-commits
-        marketplace.vscjava.vscode-gradle
-        marketplace.vscjava.vscode-java-debug
-        marketplace.vscjava.vscode-java-dependency
-        marketplace.vscjava.vscode-java-pack
-        marketplace.vscjava.vscode-java-test
-        marketplace.vscjava.vscode-maven
-        marketplace.vscodevim.vim
-        marketplace.xdebug.php-debug
-        marketplace.xdebug.php-pack
-        marketplace.yzhang.markdown-all-in-one
-        marketplace.zobo.php-intellisense
+      extensions = with marketplace; [
+        bbenoist.nix
+        bierner.github-markdown-preview
+        bierner.markdown-checkbox
+        bierner.markdown-emoji
+        bierner.markdown-footnotes
+        bierner.markdown-mermaid
+        bierner.markdown-preview-github-styles
+        bierner.markdown-yaml-preamble
+        bmewburn.vscode-intelephense-client
+        christian-kohler.path-intellisense
+        davidanson.vscode-markdownlint
+        docker.docker
+        ecmel.vscode-html-css
+        editorconfig.editorconfig
+        github.copilot-chat
+        github.vscode-github-actions
+        james-yu.latex-workshop
+        jnoortheen.nix-ide
+        jock.svg
+        mads-hartmann.bash-ide-vscode
+        matthewpi.caddyfile-support
+        ms-azuretools.vscode-containers
+        ms-azuretools.vscode-docker
+        ms-python.debugpy
+        ms-python.python
+        ms-python.vscode-pylance
+        ms-python.vscode-python-envs
+        ms-python.black-formatter
+        ms-vscode-remote.remote-ssh
+        ms-vscode-remote.remote-ssh-edit
+        ms-vscode.remote-explorer
+        murloccra4ler.leap
+        naumovs.color-highlight
+        redhat.java
+        streetsidesoftware.code-spell-checker
+        streetsidesoftware.code-spell-checker-british-english
+        streetsidesoftware.code-spell-checker-german
+        szaldivar.szaldivar-leap
+        vivaxy.vscode-conventional-commits
+        vscjava.vscode-gradle
+        vscjava.vscode-java-debug
+        vscjava.vscode-java-dependency
+        vscjava.vscode-java-pack
+        vscjava.vscode-java-test
+        vscjava.vscode-maven
+        vscodevim.vim
+        xdebug.php-debug
+        xdebug.php-pack
+        yzhang.markdown-all-in-one
+        zobo.php-intellisense
       ];
 
       userSettings = {
