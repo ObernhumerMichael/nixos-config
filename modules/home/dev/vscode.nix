@@ -49,18 +49,11 @@ in
         ms-vscode.remote-explorer
         murloccra4ler.leap
         naumovs.color-highlight
-        redhat.java
         streetsidesoftware.code-spell-checker
         streetsidesoftware.code-spell-checker-british-english
         streetsidesoftware.code-spell-checker-german
         szaldivar.szaldivar-leap
         vivaxy.vscode-conventional-commits
-        vscjava.vscode-gradle
-        vscjava.vscode-java-debug
-        vscjava.vscode-java-dependency
-        vscjava.vscode-java-pack
-        vscjava.vscode-java-test
-        vscjava.vscode-maven
         vscodevim.vim
         xdebug.php-debug
         xdebug.php-pack
