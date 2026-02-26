@@ -23,11 +23,6 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -38,7 +33,6 @@
       stylix,
       spicetify-nix,
       caelestia-shell,
-      nix-vscode-extensions,
       ...
     }@inputs:
     {
@@ -46,10 +40,6 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          {
-            nixpkgs.overlays = [ inputs.nix-vscode-extensions.overlays.default ];
-            nixpkgs.config.allowUnfree = true;
-          }
           stylix.nixosModules.stylix
           ./hosts/laptop/configuration.nix
           home-manager.nixosModules.home-manager

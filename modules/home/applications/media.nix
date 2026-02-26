@@ -13,5 +13,6 @@
     vlc
     ffmpeg
     mediainfo
+    loupe
   ];
 }
