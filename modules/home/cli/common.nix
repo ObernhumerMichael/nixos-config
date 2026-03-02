@@ -15,6 +15,7 @@
 
     unzip
     zip
+    p7zip
     rsync
     wl-clipboard
     jq

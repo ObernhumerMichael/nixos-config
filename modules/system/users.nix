@@ -12,7 +12,8 @@
       "audio" # sound
       "input" # input devices
       "i2c" # I2C devices
-      "vboxusers" # VirtualBox
+      "libvirtd" # manage virtual machines
+      "kvm" # use KVM for virtualization
     ];
     shell = pkgs.zsh; # default shell
   };
