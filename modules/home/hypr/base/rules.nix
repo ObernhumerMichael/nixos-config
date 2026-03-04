@@ -29,6 +29,7 @@
       # Tools that behave badly tiled
       "match:class ^(GeoGebra)$, float on"
       "match:class ^(GeoGebra)$, center on"
+      "match:title ^(CodeDraw)$, center on"
 
       # ============================================================
       # Dropdown terminal (pyprland)
