@@ -7,6 +7,7 @@
     gimp
     evince
     pdfarranger
+    drawio
 
     system-config-printer
     simple-scan

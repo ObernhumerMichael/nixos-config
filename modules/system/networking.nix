@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
+    networkmanager-openconnect
   ];
 
   networking = {

@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    neofetch
     htop
     tree
     neovim
