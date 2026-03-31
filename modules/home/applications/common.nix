@@ -21,4 +21,6 @@
   programs.obsidian = {
     enable = true;
   };
+
+  gtk.gtk4.theme = config.gtk.theme;
 }

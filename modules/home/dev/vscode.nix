@@ -37,7 +37,7 @@ in
 
         "terminal.integrated.tabs.enabled" = false;
         "git.enableSmartCommit" = true;
-        "workbench.colorTheme" = "Stylix";
+        "workbench.colorTheme" = "Catppuccin Mocha";
 
         "editor.rulers" = [
           80

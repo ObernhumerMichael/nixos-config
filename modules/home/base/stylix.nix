@@ -8,5 +8,6 @@
       profileNames = [ "default" ];
       colorTheme.enable = true;
     };
+    vscode.enable = false;
   };
 }

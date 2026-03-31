@@ -8,7 +8,7 @@
   ############################################################
   # pyprland configuration file
   ############################################################
-  xdg.configFile."hypr/pyprland.toml".text = ''
+  xdg.configFile."pypr/config.toml".text = ''
     [pyprland]
 
      plugins = [
