@@ -14,5 +14,6 @@
     ffmpeg
     mediainfo
     loupe
+    inkscape
   ];
 }
