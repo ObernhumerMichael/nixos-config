@@ -2,8 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    bitwarden-desktop
-    keepassxc
     veracrypt
 
     yubioath-flutter
@@ -16,4 +14,5 @@
   ];
 
   programs.gpg.enable = true;
+  programs.keepassxc.enable = true;
 }
