@@ -43,7 +43,22 @@ in
           80
           120
         ];
-
+        "latex-workshop.latex.tools" = [
+          {
+            "name" = "latexmk";
+            "command" = "latexmk";
+            "args" = [
+              "-shell-escape"
+              "-synctex=1"
+              "-interaction=nonstopmode"
+              "-file-line-error"
+              "-pdf"
+              "-outdir=%OUTDIR%"
+              "%DOC%"
+            ];
+            "env" = { };
+          }
+        ];
         "vim.normalModeKeyBindingsNonRecursive" = [
           {
             "before" = [ "s" ];
