@@ -2,7 +2,6 @@
 {
   wayland.windowManager.hyprland.settings = {
     dwindle = {
-      pseudotile = true; # Master switch for pseudotiling.
       preserve_split = true; # You probably want this
       special_scale_factor = 0.9;
     };

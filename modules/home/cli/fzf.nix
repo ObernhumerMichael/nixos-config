@@ -9,7 +9,7 @@
       "--layout reverse"
       "--border"
     ];
-    fileWidgetOptions = [
+    fileWidget.options = [
       "--preview 'bat --style=numbers --color=always {}'"
     ];
   };
