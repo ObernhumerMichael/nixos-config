@@ -18,11 +18,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -32,7 +27,6 @@
       home-manager,
       stylix,
       spicetify-nix,
-      caelestia-shell,
       ...
     }@inputs:
     {

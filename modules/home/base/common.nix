@@ -6,6 +6,6 @@
     ./zsh.nix
     ./git.nix
     ./kitty.nix
-    ./caelestia.nix
+    ./gnome.nix
   ];
 }

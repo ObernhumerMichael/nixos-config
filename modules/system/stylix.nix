@@ -42,6 +42,7 @@ in
     # Use recolored to repaint a wallpaper into the colors of the current base16 theme.
     # image = recolored;
     base16Scheme = theme;
+    polarity = "dark";
 
     cursor = {
       package = pkgs.bibata-cursors;
