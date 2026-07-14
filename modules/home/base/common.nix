@@ -6,6 +6,5 @@
     ./zsh.nix
     ./git.nix
     ./kitty.nix
-    ./gnome.nix
   ];
 }

@@ -21,10 +21,5 @@
     hunspellDicts.en_US
   ];
 
-  services.nextcloud-client = {
-    enable = true;
-    startInBackground = true;
-  };
-
   programs.ranger.enable = true;
 }

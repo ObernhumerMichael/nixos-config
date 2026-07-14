@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/home/common.nix
+    ../../modules/home/gnome/gnome.nix
   ];
 
   home = {
@@ -12,7 +13,8 @@
 
     sessionVariables = {
       EDITOR = "vim";
-      BROWSER = "firefox";
+      VISUAL = "vim";
+      BROWSER = "brave";
       GPG_TTY = "$(tty)";
       SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh";
     };

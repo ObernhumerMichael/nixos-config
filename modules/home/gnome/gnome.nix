@@ -1,10 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs.gnomeExtensions; [
-    blur-my-shell
-    caffeine
-    appindicator
+  imports = [
+    ./base/keybindings.nix
+    ./base/nightlight.nix
+
+    ./extensions/appindicator.nix
+    ./extensions/blur-my-shell.nix
+    ./extensions/brightness-control-using-ddcutil.nix
+    ./extensions/caffeine.nix
   ];
 
   dconf.settings = {
@@ -19,23 +23,15 @@
     # --------------------------------
     # Extensions
     # --------------------------------
-
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
         "caffeine@patapon.info"
         "appindicatorsupport@rgcjonas.gmail.com"
+        "display-brightness-ddcutil@themightydeity.github.com"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
         "blur-my-shell@aunetx"
       ];
-    };
-
-    "org/gnome/shell/extensions/blur-my-shell/panel" = {
-      blur = true;
-    };
-
-    # Caffeine defaults (toggle in top bar, no auto-timer)
-    "org/gnome/shell/extensions/caffeine" = {
-      toggle-state = false;
     };
   };
 }

@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     ../../modules/system/common.nix
     ../../modules/system/nvidia.nix
-    ../../modules/system/desktop/gnome.nix
+    ../../modules/system/gnome.nix
   ];
 
   networking.hostName = "laptop";

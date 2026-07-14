@@ -10,6 +10,7 @@
     ./science.nix
     ./firefox.nix
     ./media.nix
+    ./nextcloud.nix
   ];
 
   home.packages = with pkgs; [
