@@ -30,10 +30,33 @@
       move-to-monitor-down = [ "<Super><Shift>j" ];
       move-to-monitor-up = [ "<Super><Shift>k" ];
       move-to-monitor-right = [ "<Super><Shift>l" ];
+
+      # Unset default keybindings to allow Super + 1-9 combination
+      switch-to-application-1 = [ ];
+      switch-to-application-2 = [ ];
+      switch-to-application-3 = [ ];
+      switch-to-application-4 = [ ];
+      switch-to-application-5 = [ ];
+      switch-to-application-6 = [ ];
+      switch-to-application-7 = [ ];
+      switch-to-application-8 = [ ];
+      switch-to-application-9 = [ ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
       screensaver = [ "<Alt><Super>l" ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>b";
+      command = "brave";
+      name = "Start Brave Browser";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>Return";
+      command = "kitty";
+      name = "Start Terminal";
     };
   };
 }

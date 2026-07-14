@@ -4,6 +4,7 @@
   imports = [
     ./base/keybindings.nix
     ./base/nightlight.nix
+    ./base/privacy.nix
 
     ./extensions/appindicator.nix
     ./extensions/blur-my-shell.nix
