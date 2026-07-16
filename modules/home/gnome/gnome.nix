@@ -5,6 +5,8 @@
     ./base/keybindings.nix
     ./base/nightlight.nix
     ./base/privacy.nix
+    ./base/interface.nix
+    ./base/shell.nix
 
     ./extensions/appindicator.nix
     ./extensions/blur-my-shell.nix
@@ -12,20 +14,11 @@
     ./extensions/caffeine.nix
   ];
 
+  # --------------------------------
+  # Extensions only (see shell.nix for the actual shell config)
+  # --------------------------------
   dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-
     "org/gnome/shell" = {
-      always-show-log-out = true;
-    };
-
-    # --------------------------------
-    # Extensions
-    # --------------------------------
-    "org/gnome/shell" = {
-      disable-user-extensions = false;
       enabled-extensions = [
         "caffeine@patapon.info"
         "appindicatorsupport@rgcjonas.gmail.com"
