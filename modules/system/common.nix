@@ -18,5 +18,6 @@
     ./system-audio.nix
     ./virtualisation.nix
     ./nix-ld.nix
+    ./qt.nix
   ];
 }
