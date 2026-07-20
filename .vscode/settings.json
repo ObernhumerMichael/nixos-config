@@ -13,6 +13,7 @@
         "hosts",
         "security",
         "caelestia",
-        "gnome"
+        "gnome",
+        "nextcloud"
     ]
 }

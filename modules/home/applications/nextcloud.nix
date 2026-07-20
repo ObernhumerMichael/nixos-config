@@ -3,7 +3,7 @@
 {
   services.nextcloud-client = {
     enable = true;
-    startInBackground = false;
+    startInBackground = true;
   };
 
   home.packages = with pkgs; [
