@@ -41,6 +41,12 @@
       switch-to-application-7 = [ ];
       switch-to-application-8 = [ ];
       switch-to-application-9 = [ ];
+
+      minimize = [ ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      calculator = [ "Calculator" ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
