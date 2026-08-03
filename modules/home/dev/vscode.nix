@@ -75,6 +75,9 @@ in
         "[markdown]" = {
           "editor.defaultFormatter" = "DavidAnson.vscode-markdownlint";
         };
+        "[java]" = {
+          "editor.defaultFormatter" = "josevseb.google-java-format-for-vs-code";
+        };
       };
     };
   };
