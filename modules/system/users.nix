@@ -14,6 +14,7 @@
       "i2c" # I2C devices
       "libvirtd" # manage virtual machines
       "kvm" # use KVM for virtualization
+      "docker" # manage docker containers
     ];
     shell = pkgs.zsh; # default shell
   };

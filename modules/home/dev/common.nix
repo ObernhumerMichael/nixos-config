@@ -14,5 +14,6 @@
 
   imports = [
     ./vscode.nix
+    ./docker.nix
   ];
 }
