@@ -13,6 +13,7 @@
     simple-scan
 
     brave
+    chromium
     google-chrome
 
     libreoffice-qt

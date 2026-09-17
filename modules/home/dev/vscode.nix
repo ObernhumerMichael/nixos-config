@@ -19,6 +19,7 @@ in
         "editor.minimap.enabled" = false;
         "editor.formatOnSave" = true;
         "editor.lineNumbers" = "relative";
+        "workbench.panel.showLabels" = false;
 
         # Fonts
         "chat.editor.fontFamily" = lib.mkForce font;
