@@ -1,8 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs.gnomeExtensions; [
-    brightness-control-using-ddcutil
+  home.packages = with pkgs; [
+    ddcutil
+    gnomeExtensions.brightness-control-using-ddcutil
   ];
 
   dconf.settings = {
