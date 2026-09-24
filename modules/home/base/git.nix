@@ -15,6 +15,7 @@
       color.ui = "auto";
       init.defaultBranch = "main";
       pull.rebase = false;
+      push.autoSetupRemote = true;
     };
 
     # GPG signing configuration
