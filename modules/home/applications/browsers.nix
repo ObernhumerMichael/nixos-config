@@ -1,6 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    brave
+    chromium
+    google-chrome
+    tor-browser
+  ];
+
   programs.firefox = {
     enable = true;
     configPath = ".mozilla/firefox";

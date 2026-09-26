@@ -1,4 +1,5 @@
-{ pkgs, ... }:
+# All theming in one place: Stylix (system + Home Manager targets) and Qt.
+{ pkgs, lib, ... }:
 
 let
   theme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
@@ -45,6 +46,34 @@ in
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font Mono";
       };
+    };
+  };
+
+  # Qt: the system and the user session both use qtct as the platform theme.
+  qt = {
+    platformTheme = lib.mkForce "qt5ct";
+    style = lib.mkForce null;
+  };
+
+  home-manager.users.user = {
+    stylix.targets = {
+      firefox = {
+        enable = true;
+        profileNames = [ "default" ];
+        colorTheme.enable = true;
+      };
+      vscode.enable = false;
+
+      qt = {
+        enable = true;
+        platform = "qtct";
+      };
+    };
+
+    # qt5ct/qt6ct needs to actually be the platform theme backend used
+    qt = {
+      enable = true;
+      platformTheme.name = "qtct";
     };
   };
 }

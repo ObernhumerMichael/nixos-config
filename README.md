@@ -12,7 +12,8 @@ hosts/laptop/
   nvidia.nix              # PRIME offload, bus IDs for this machine
   home.nix                # Home Manager entry; picks the home modules
 modules/
-  system/                 # NixOS modules (default.nix imports the shared set)
+  system/                 # NixOS modules (default.nix imports the shared set);
+                          # theming.nix and gpg.nix also set the matching Home Manager options
   home/                   # Home Manager modules, one folder per area
     base/ cli/ dev/ applications/ gnome/
 wallpapers/

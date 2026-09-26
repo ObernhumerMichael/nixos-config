@@ -5,12 +5,11 @@
     ./anki.nix
     ./security.nix
     ./office.nix
-    ./usb.nix
+    ./files.nix
     ./spotify.nix
     ./science.nix
-    ./firefox.nix
+    ./browsers.nix
     ./media.nix
-    ./nextcloud.nix
   ];
 
   home.packages = [ (pkgs.discord.override { withVencord = true; }) ];

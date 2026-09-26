@@ -15,5 +15,6 @@
     mediainfo
     loupe
     inkscape
+    gimp
   ];
 }
