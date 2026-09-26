@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ config, ... }:
 
 let
   font = config.stylix.fonts.monospace.name;
@@ -11,7 +6,6 @@ in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
 
     profiles.default = {
       userSettings = {
@@ -22,19 +16,19 @@ in
         "workbench.panel.showLabels" = false;
 
         # Fonts
-        "chat.editor.fontFamily" = lib.mkForce font;
-        "debug.console.fontFamily" = lib.mkForce font;
-        "editor.fontFamily" = lib.mkForce font;
-        "editor.inlayHints.fontFamily" = lib.mkForce font;
-        "editor.inlineSuggest.fontFamily" = lib.mkForce font;
-        "markdown.preview.fontFamily" = lib.mkForce font;
-        "scm.inputFontFamily" = lib.mkForce font;
+        "chat.editor.fontFamily" = font;
+        "debug.console.fontFamily" = font;
+        "editor.fontFamily" = font;
+        "editor.inlayHints.fontFamily" = font;
+        "editor.inlineSuggest.fontFamily" = font;
+        "markdown.preview.fontFamily" = font;
+        "scm.inputFontFamily" = font;
 
         # Font Sizes
-        "editor.fontSize" = lib.mkForce 14;
-        "debug.console.fontSize" = lib.mkForce 14;
-        "chat.editor.fontSize" = lib.mkForce 14;
-        "terminal.integrated.fontSize" = lib.mkForce 14;
+        "editor.fontSize" = 14;
+        "debug.console.fontSize" = 14;
+        "chat.editor.fontSize" = 14;
+        "terminal.integrated.fontSize" = 14;
 
         "terminal.integrated.tabs.enabled" = false;
         "git.enableSmartCommit" = true;

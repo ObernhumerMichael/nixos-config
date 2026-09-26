@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -13,15 +13,7 @@
     ./nextcloud.nix
   ];
 
-  home.packages = with pkgs; [
-    (discord.override {
-      withVencord = true;
-    })
-  ];
+  home.packages = [ (pkgs.discord.override { withVencord = true; }) ];
 
-  programs.obsidian = {
-    enable = true;
-  };
-
-  # gtk.gtk4.theme = config.gtk.theme;
+  programs.obsidian.enable = true;
 }

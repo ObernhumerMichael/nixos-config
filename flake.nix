@@ -22,11 +22,9 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
       stylix,
-      spicetify-nix,
       ...
     }@inputs:
     {

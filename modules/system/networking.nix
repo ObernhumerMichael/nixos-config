@@ -1,22 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    networkmanagerapplet
-    networkmanager-openconnect
-  ];
-
-  networking = {
-    networkmanager = {
-      enable = true;
-      plugins = [ pkgs.networkmanager-openconnect ];
-    };
-
-    firewall = {
-      enable = true;
-      allowPing = true;
-      allowedTCPPorts = [ ];
-      allowedUDPPorts = [ 5353 ]; # mDNS for local discovery
-    };
+  # mDNS (UDP 5353) is opened by services.avahi.openFirewall in printer.nix
+  networking.networkmanager = {
+    enable = true;
+    plugins = [ pkgs.networkmanager-openconnect ];
   };
 }

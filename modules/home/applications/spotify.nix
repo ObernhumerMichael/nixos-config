@@ -1,26 +1,7 @@
+{ inputs, ... }:
+
 {
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+  imports = [ inputs.spicetify-nix.homeManagerModules.spicetify ];
 
-let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-in
-{
-  imports = [
-    inputs.spicetify-nix.homeManagerModules.spicetify
-  ];
-
-  programs.spicetify = {
-    enable = true;
-  };
-
-  #   enabledExtensions = with spicePkgs.extensions; [
-  #     adblockify
-  #     hidePodcasts
-  #     shuffle
-  #   ];
-  # };
+  programs.spicetify.enable = true;
 }

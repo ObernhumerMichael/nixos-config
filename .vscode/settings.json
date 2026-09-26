@@ -9,10 +9,8 @@
         "system",
         "base",
         "dep",
-        "hypr",
         "hosts",
         "security",
-        "caelestia",
         "gnome",
         "nextcloud"
     ]

@@ -1,12 +1,12 @@
 # Michael's NixOS Configuration
 
-A modular, flake-based NixOS configuration with home-manager integration, featuring Hyprland as the desktop environment and comprehensive system and user package management.
+A modular, flake-based NixOS configuration with home-manager integration, featuring GNOME as the desktop environment and comprehensive system and user package management.
 
 ## Features
 
 - **Flake-based**: Uses Nix flakes for reproducible builds and dependency management
 - **Modular architecture**: Organized into reusable modules for system and home configurations
-- **Hyprland desktop**: Modern Wayland compositor with custom keybindings and theming
+- **GNOME desktop**: Custom keybindings, extensions and dconf settings
 - **Stylix integration**: Unified theming across applications
 - **Security-focused**: Includes firewall, GPG, and polkit configurations
 - **Development tools**: Pre-configured development environment with multiple languages
@@ -27,13 +27,11 @@ A modular, flake-based NixOS configuration with home-manager integration, featur
 │   │   ├── applications/  # Application configurations
 │   │   ├── base/          # Core user settings
 │   │   ├── dev/           # Development tools
-│   │   ├── hypr/          # Hyprland ecosystem
+│   │   ├── gnome/         # GNOME settings and extensions
 │   │   └── cli/           # Terminal tools
 │   └── system/            # NixOS system modules
-│       ├── desktop/       # Desktop environments
-│       └── [other]/       # System services
+│       └── *.nix            # System services
 └── wallpapers/            # Desktop wallpapers
-└── templates/             # For dev shells
 ```
 
 ## Installation
@@ -81,9 +79,9 @@ nix flake update
 nix flake lock --update-input nixpkgs
 ```
 
-## Key Bindings (Hyprland)
+## Key Bindings (GNOME)
 
-See the [keybindings](./modules/home/hypr/base/keybindings.nix) file.
+See the [keybindings](./modules/home/gnome/keybindings.nix) file.
 
 ## Customization
 
@@ -120,7 +118,7 @@ The configuration uses Stylix for unified theming. To change themes:
 ### Adding new modules
 
 1. Create new .nix file in appropriate module directory
-2. Import it in the parent module's common.nix
+2. Import it in the parent module's common.nix (or directly in `hosts/<host>/home.nix`)
 3. Add configuration options
 
 ### Testing changes
@@ -156,5 +154,4 @@ This configuration is provided as-is. Feel free to use and modify for your own s
 
 - NixOS community for the excellent operating system
 - Home Manager project for user environment management
-- Hyprland community for the desktop environment
 - Various NixOS modules and flakes used throughout the project

@@ -1,12 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  security.polkit.enable = true;
-  security.pam.services.hyprlock = { };
-
   environment.systemPackages = with pkgs; [
     gnupg
-    pinentry-gnome3 # or pinentry-qt / pinentry-tty
+    pinentry-gnome3
   ];
 
   programs.gnupg.agent = {
@@ -16,7 +13,4 @@
   };
 
   services.pcscd.enable = true; # Required for YubiKey smartcard
-
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.login.enableGnomeKeyring = true;
 }

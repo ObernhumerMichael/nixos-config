@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   programs.git = {
@@ -9,25 +9,18 @@
         name = "Michael Obernhumer";
         email = "michaelobernhumer@gmail.com";
       };
-      commit = {
-        gpgSign = true;
-      };
-      color.ui = "auto";
       init.defaultBranch = "main";
       pull.rebase = false;
       push.autoSetupRemote = true;
     };
 
-    # GPG signing configuration
+    # Sign all commits and tags with the YubiKey signing subkey
     signing = {
-      format = "openpgp"; # use OpenPGP (your YubiKey)
-      key = "0x335020D3DDAB1C93"; # the signing subkey on YubiKey
-      signByDefault = true; # sign all commits and tags
-      # signer = null   # optional: path to gpg if needed, usually auto-detected
+      format = "openpgp";
+      key = "0x335020D3DDAB1C93";
+      signByDefault = true;
     };
   };
 
-  programs.diff-so-fancy = {
-    enable = true;
-  };
+  programs.diff-so-fancy.enable = true;
 }

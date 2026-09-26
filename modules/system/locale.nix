@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   i18n = {
@@ -16,5 +16,4 @@
     };
   };
 
-  services.xserver.xkb.layout = "us";
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   programs.firefox = {
@@ -6,9 +6,6 @@
     configPath = ".mozilla/firefox";
 
     profiles.default = {
-      id = 0;
-      name = "default";
-      isDefault = true;
 
       search = {
         default = "ddg";

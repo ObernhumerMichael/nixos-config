@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.anki = {
@@ -6,19 +6,11 @@
     theme = "dark";
     addons = [
       (pkgs.ankiAddons.anki-connect.withConfig {
-        config = {
-          apiKey = null;
-          apiLogPath = null;
-          webBindAddress = "127.0.0.1";
-          webBindPort = 8765;
-          webCorsOrigin = "http://localhost";
-          webCorsOriginList = [
-            "http://localhost"
-            "app://obsidian.md"
-          ];
-        };
+        config.webCorsOriginList = [
+          "http://localhost"
+          "app://obsidian.md"
+        ];
       })
     ];
-
   };
 }

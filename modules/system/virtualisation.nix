@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   virtualisation = {
@@ -12,15 +12,7 @@
       };
     };
 
-    docker = {
-      enable = true;
-
-      # Optional but recommended
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
-    };
+    docker.enable = true;
   };
 
   programs.virt-manager.enable = true;

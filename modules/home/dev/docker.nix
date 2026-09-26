@@ -1,9 +1,0 @@
-{ config, pkgs, ... }:
-
-{
-  programs.docker-cli.enable = true;
-
-  home.packages = with pkgs; [
-    docker-compose
-  ];
-}
