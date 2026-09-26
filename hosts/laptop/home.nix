@@ -2,14 +2,11 @@
 
 {
   imports = [
-    ../../modules/home/base/stylix.nix
-    ../../modules/home/base/zsh.nix
-    ../../modules/home/base/git.nix
-    ../../modules/home/base/kitty.nix
-    ../../modules/home/cli/common.nix
-    ../../modules/home/dev/common.nix
-    ../../modules/home/applications/common.nix
-    ../../modules/home/gnome/gnome.nix
+    ../../modules/home/base
+    ../../modules/home/cli
+    ../../modules/home/dev
+    ../../modules/home/applications
+    ../../modules/home/gnome
   ];
 
   home = {

@@ -1,157 +1,40 @@
 # Michael's NixOS Configuration
 
-A modular, flake-based NixOS configuration with home-manager integration, featuring GNOME as the desktop environment and comprehensive system and user package management.
+Flake-based NixOS + Home Manager config for a single GNOME laptop, themed with Stylix.
 
-## Features
-
-- **Flake-based**: Uses Nix flakes for reproducible builds and dependency management
-- **Modular architecture**: Organized into reusable modules for system and home configurations
-- **GNOME desktop**: Custom keybindings, extensions and dconf settings
-- **Stylix integration**: Unified theming across applications
-- **Security-focused**: Includes firewall, GPG, and polkit configurations
-- **Development tools**: Pre-configured development environment with multiple languages
-
-## Structure
+## Layout
 
 ```txt
-.
-├── flake.nix                # Main flake definition
-├── flake.lock               # Locked dependency versions
-├── hosts/                   # Host-specific configurations
-│   └── laptop/
-│       ├── configuration.nix    # System configuration
-│       ├── hardware-configuration.nix
-│       └── home.nix            # User configuration
-├── modules/                 # Reusable configuration modules
-│   ├── home/               # Home-manager modules
-│   │   ├── applications/  # Application configurations
-│   │   ├── base/          # Core user settings
-│   │   ├── dev/           # Development tools
-│   │   ├── gnome/         # GNOME settings and extensions
-│   │   └── cli/           # Terminal tools
-│   └── system/            # NixOS system modules
-│       └── *.nix            # System services
-└── wallpapers/            # Desktop wallpapers
+flake.nix                 # inputs + nixosConfigurations.laptop
+hosts/laptop/
+  configuration.nix       # boot, LUKS, hostname; picks the system modules
+  hardware-configuration.nix
+  nvidia.nix              # PRIME offload, bus IDs for this machine
+  home.nix                # Home Manager entry; picks the home modules
+modules/
+  system/                 # NixOS modules (default.nix imports the shared set)
+  home/                   # Home Manager modules, one folder per area
+    base/ cli/ dev/ applications/ gnome/
+wallpapers/
 ```
 
-## Installation
-
-1. **Clone the repository**:
-
-    ```bash
-    https://github.com/ObernhumerMichael/nixos-config.git
-    cd nixos-config
-    ```
-
-2. **Copy hardware configuration** (if setting up a new host):
-
-    ```bash
-    sudo nixos-generate-config --show-hardware-config > hosts/newhost/hardware-configuration.nix
-    ```
-
-3. **Update flake.nix** for your new host configuration
-
-4. **Build and switch**:
-
-   ```bash
-   sudo nixos-rebuild switch --flake .#hostname
-   ```
+Each folder's `default.nix` imports its files, so hosts import folders
+(`../../modules/home/cli`). New module: add the file, list it in that folder's
+`default.nix`.
 
 ## Usage
 
-### Rebuilding the system
-
 ```bash
-# For the laptop host
-sudo nixos-rebuild switch --flake .#laptop
-
-# Dry run to check for errors
-sudo nixos-rebuild dry-run --flake .#laptop
+sudo nixos-rebuild switch --flake .#laptop   # apply
+nixos-rebuild build --flake .#laptop         # build only
+nix flake update                             # update inputs
+nix fmt                                      # format all .nix files
 ```
 
-### Updating the flake
+GNOME keybindings: [modules/home/gnome/keybindings.nix](./modules/home/gnome/keybindings.nix).
 
-```bash
-# Update all inputs
-nix flake update
+## New host
 
-# Update specific input
-nix flake lock --update-input nixpkgs
-```
-
-## Key Bindings (GNOME)
-
-See the [keybindings](./modules/home/gnome/keybindings.nix) file.
-
-## Customization
-
-### Theming
-
-The configuration uses Stylix for unified theming. To change themes:
-
-1. Modify `modules/home/base/stylix.nix` or `modules/system/stylix.nix`
-2. Rebuild the system
-
-### Adding new software
-
-- **System packages**: Add to relevant module in `modules/system/`
-- **User packages**: Add to relevant module in `modules/home/`
-- **Custom packages**: Create overlays in `flake.nix`
-
-### New host setup
-
-1. Create new directory in `hosts/`
-2. Add configuration.nix and home.nix
-3. Update flake.nix outputs
-4. Generate hardware config
-
-## Maintenance
-
-### Troubleshooting
-
-- Check system logs: `journalctl -u nixos-rebuild`
-- Test configuration: `nixos-rebuild test --flake .#hostname`
-- Rollback: `sudo nixos-rebuild switch --rollback`
-
-## Development
-
-### Adding new modules
-
-1. Create new .nix file in appropriate module directory
-2. Import it in the parent module's common.nix (or directly in `hosts/<host>/home.nix`)
-3. Add configuration options
-
-### Testing changes
-
-```bash
-# Check flake syntax
-nix flake check
-
-# Build without switching
-nixos-rebuild build --flake .#hostname
-```
-
-## Dependencies
-
-- **NixOS unstable** - Latest packages and features
-- **Home Manager** - User environment management
-- **Stylix** - Theming system
-- **Spicetify** - Spotify customization
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-This configuration is provided as-is. Feel free to use and modify for your own setup.
-
-## Acknowledgments
-
-- NixOS community for the excellent operating system
-- Home Manager project for user environment management
-- Various NixOS modules and flakes used throughout the project
+1. `mkdir hosts/<name>` with `configuration.nix` and `home.nix` (copy the laptop ones).
+2. `sudo nixos-generate-config --show-hardware-config > hosts/<name>/hardware-configuration.nix`
+3. Add `nixosConfigurations.<name>` to `flake.nix`.

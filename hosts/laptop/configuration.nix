@@ -2,17 +2,19 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system/common.nix
-    ../../modules/system/nvidia.nix
+    ./nvidia.nix
+    ../../modules/system
     ../../modules/system/gnome.nix
   ];
 
   networking.hostName = "laptop";
   time.timeZone = "Europe/Vienna";
   system.stateVersion = "25.05";
-  hardware.i2c.enable = true;
-  boot = {
 
+  # DDC/CI brightness control for external monitors (ddcutil)
+  hardware.i2c.enable = true;
+
+  boot = {
     loader = {
       systemd-boot.enable = false;
 
