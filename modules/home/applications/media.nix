@@ -16,5 +16,6 @@
     loupe
     inkscape
     gimp
+    yt-dlp
   ];
 }
