@@ -18,6 +18,11 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -27,8 +32,16 @@
       stylix,
       ...
     }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      dev = import ./dev.nix { inherit inputs pkgs system; };
+    in
     {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
+      formatter.${system} = pkgs.nixfmt-tree;
+
+      checks.${system} = dev.checks;
+      devShells.${system} = dev.devShells;
 
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

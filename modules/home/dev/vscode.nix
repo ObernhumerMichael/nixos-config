@@ -38,6 +38,8 @@ in
           80
           120
         ];
+
+        "claudeCode.preferredLocation" = "panel";
         "latex-workshop.latex.tools" = [
           {
             "name" = "latexmk";
