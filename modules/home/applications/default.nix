@@ -3,6 +3,7 @@
 {
   imports = [
     ./anki.nix
+    ./default-apps.nix
     ./security.nix
     ./office.nix
     ./files.nix
