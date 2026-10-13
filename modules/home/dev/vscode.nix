@@ -40,6 +40,7 @@ in
         ];
 
         "claudeCode.preferredLocation" = "panel";
+        "claudeCode.hideOnboarding" = true;
         "latex-workshop.latex.tools" = [
           {
             "name" = "latexmk";
