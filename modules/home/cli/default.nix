@@ -14,6 +14,9 @@
     speedtest-cli
     mtr
 
+    man-pages
+    man-pages-posix
+
     unzip
     zip
     p7zip

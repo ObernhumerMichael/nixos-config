@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     nixfmt
+    claude-code
     jetbrains.idea
     # rstudio compiles as C++17, but boost built with gcc 16 (default C++20)
     # no longer exports the Boost.URL symbols a C++17 consumer links against
