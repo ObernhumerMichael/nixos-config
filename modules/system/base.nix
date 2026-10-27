@@ -41,7 +41,6 @@
   # SSD health: desktop notification when SMART reports problems
   services.smartd = {
     enable = true;
-    # the "other users can spam notifications" caveat doesn't apply to a single-user laptop
     notifications.systembus-notify.enable = true;
   };
   services.thermald.enable = true; # Intel thermal management
