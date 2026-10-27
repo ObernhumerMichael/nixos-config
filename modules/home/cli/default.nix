@@ -58,5 +58,6 @@
     fileWidget.options = [
       "--preview 'bat --style=numbers --color=always {}'"
     ];
+    historyWidget.command = ""; # Ctrl+R belongs to atuin
   };
 }

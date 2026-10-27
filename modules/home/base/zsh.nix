@@ -57,6 +57,16 @@
   # searchable shell history on Ctrl+R
   programs.atuin = {
     enable = true;
-    flags = [ "--disable-up-arrow" ];
+    flags = [
+      "--disable-up-arrow"
+      "--disable-ai" # no `?` natural-language prompt
+    ];
+    settings = {
+      enter_accept = false; # Enter puts the command on the prompt to edit, doesn't run it
+      style = "compact";
+      inline_height = 20; # open below the prompt instead of fullscreen
+      workspaces = true; # adds a "this git repo" filter mode
+      update_check = false; # updates come from the flake
+    };
   };
 }
