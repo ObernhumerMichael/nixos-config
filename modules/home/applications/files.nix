@@ -11,8 +11,6 @@
 
   programs.ranger.enable = true;
 
-  services.udiskie.enable = true;
-
   services.nextcloud-client = {
     enable = true;
     startInBackground = true;

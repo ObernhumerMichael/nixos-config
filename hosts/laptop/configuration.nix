@@ -16,12 +16,8 @@
 
   boot = {
     loader = {
-      systemd-boot.enable = false;
-
-      grub = {
+      systemd-boot = {
         enable = true;
-        efiSupport = true;
-        device = "nodev";
         # keep old kernels from filling the 1 GB /boot
         configurationLimit = 10;
       };

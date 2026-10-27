@@ -15,6 +15,10 @@
 
   services.pcscd.enable = true; # Required for YubiKey smartcard
 
+  # GNOME's own SSH agent would claim SSH_AUTH_SOCK; without it the gnupg
+  # module points SSH at gpg-agent (and sets GPG_TTY per shell) itself.
+  services.gnome.gcr-ssh-agent.enable = false;
+
   home-manager.users.user = {
     programs.gpg.enable = true;
 
@@ -22,11 +26,5 @@
       yubioath-flutter
       yubikey-manager
     ];
-
-    home.sessionVariables = {
-      GPG_TTY = "$(tty)";
-      # Override GNOME gcr-ssh-agent so SSH goes through gpg-agent (YubiKey).
-      SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh";
-    };
   };
 }

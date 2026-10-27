@@ -26,10 +26,12 @@ Each folder's `default.nix` imports its files, so hosts import folders
 ## Usage
 
 ```bash
-sudo nixos-rebuild switch --flake .#laptop   # apply
-nixos-rebuild build --flake .#laptop         # build only
-nix flake update                             # update inputs
-nix fmt                                      # format all .nix files
+nh os switch            # apply (nh asks for sudo itself)
+nh os switch -u --ask   # update inputs, show the diff, confirm
+nh os build             # build only
+nh os rollback          # back to the previous generation
+nh clean all --keep 5   # free disk space now (also runs weekly)
+nix fmt                 # format all .nix files
 ```
 
 GNOME keybindings: [modules/home/gnome/keybindings.nix](./modules/home/gnome/keybindings.nix).

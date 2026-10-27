@@ -7,11 +7,9 @@
   ];
 
   home.packages = with pkgs; [
-    htop
     tree
 
     fastfetch
-    net-tools
     dig
     speedtest-cli
     mtr
