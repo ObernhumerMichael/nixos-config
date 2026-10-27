@@ -1,12 +1,14 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./tmux.nix ];
+  imports = [
+    ./tmux.nix
+    ./nix-index.nix
+  ];
 
   home.packages = with pkgs; [
     htop
     tree
-    neovim
 
     fastfetch
     net-tools
@@ -27,6 +29,14 @@
   ];
 
   services.tldr-update.enable = true;
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    vimAlias = true;
+    withRuby = false;
+    withPython3 = false;
+  };
 
   programs.bat.enable = true;
   programs.ripgrep.enable = true;

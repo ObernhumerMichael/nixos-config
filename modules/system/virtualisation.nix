@@ -12,7 +12,11 @@
       };
     };
 
-    docker.enable = true;
+    # Rootless: the daemon runs as the user, so no root-equivalent docker group
+    docker.rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
   };
 
   programs.virt-manager.enable = true;

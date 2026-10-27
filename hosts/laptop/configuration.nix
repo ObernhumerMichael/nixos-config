@@ -22,6 +22,8 @@
         enable = true;
         efiSupport = true;
         device = "nodev";
+        # keep old kernels from filling the 1 GB /boot
+        configurationLimit = 10;
       };
       efi.canTouchEfiVariables = true;
     };

@@ -3,8 +3,6 @@
 {
   home.packages = with pkgs; [
     brave
-    chromium
-    google-chrome
     tor-browser
   ];
 

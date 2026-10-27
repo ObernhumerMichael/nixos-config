@@ -15,8 +15,7 @@
     stateVersion = "25.05";
 
     sessionVariables = {
-      EDITOR = "vim";
-      VISUAL = "vim";
+      VISUAL = "nvim";
       BROWSER = "brave";
     };
   };

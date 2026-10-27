@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     nautilus
+    file-roller
     gparted
     veracrypt
     nextcloud-client # desktop entry; the service below only autostarts it

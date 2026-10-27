@@ -10,7 +10,7 @@
     ./theming.nix
     ./printer.nix
     ./gpg.nix
-    ./gc.nix
+    ./nh.nix
     ./system-audio.nix
     ./virtualisation.nix
     ./nix-ld.nix

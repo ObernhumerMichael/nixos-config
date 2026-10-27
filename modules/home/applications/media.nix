@@ -14,8 +14,7 @@
     ffmpeg
     mediainfo
     loupe
-    inkscape
-    gimp
+    pinta
     yt-dlp
   ];
 }
