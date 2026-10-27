@@ -15,6 +15,7 @@
     git
     vim
     imagemagick
+    smartmontools # smartctl for manual checks; smartd itself doesn't put it on PATH
   ];
 
   services.fwupd.enable = true;
@@ -36,6 +37,12 @@
       OnCalendar = "weekly";
       Persistent = true; # catch up if the laptop was off
     };
+  };
+  # SSD health: desktop notification when SMART reports problems
+  services.smartd = {
+    enable = true;
+    # the "other users can spam notifications" caveat doesn't apply to a single-user laptop
+    notifications.systembus-notify.enable = true;
   };
   services.thermald.enable = true; # Intel thermal management
   zramSwap.enable = true;
