@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   # GNOME already enables pipewire with pulse support.
   services.pipewire = {

@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   imports = [
     ./base.nix
@@ -13,6 +11,6 @@
     ./nh.nix
     ./system-audio.nix
     ./virtualisation.nix
-    ./nix-ld.nix
+    ./gnome.nix
   ];
 }

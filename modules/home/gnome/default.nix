@@ -1,13 +1,23 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
     ./keybindings.nix
-    ./extensions/appindicator.nix
     ./extensions/blur-my-shell.nix
     ./extensions/brightness-control-using-ddcutil.nix
-    ./extensions/caffeine.nix
   ];
+
+  # installs each extension and enables it by its UUID
+  programs.gnome-shell = {
+    enable = true;
+    extensions = with pkgs.gnomeExtensions; [
+      { package = caffeine; }
+      { package = appindicator; }
+      { package = brightness-control-using-ddcutil; }
+      { package = user-themes; }
+      { package = blur-my-shell; }
+    ];
+  };
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -28,18 +38,10 @@
     };
 
     "org/gnome/shell" = {
-      disable-user-extensions = false;
       always-show-log-out = true;
       favorite-apps = [
         "brave-browser.desktop"
         "code.desktop"
-      ];
-      enabled-extensions = [
-        "caffeine@patapon.info"
-        "appindicatorsupport@rgcjonas.gmail.com"
-        "display-brightness-ddcutil@themightydeity.github.com"
-        "user-theme@gnome-shell-extensions.gcampax.github.com"
-        "blur-my-shell@aunetx"
       ];
     };
   };

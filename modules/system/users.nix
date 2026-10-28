@@ -4,13 +4,9 @@
   # System user configuration
   users.users.user = {
     isNormalUser = true;
-    description = "user";
     extraGroups = [
       "wheel" # sudo
       "networkmanager" # control network
-      "video" # access GPU acceleration
-      "audio" # sound
-      "input" # input devices
       "i2c" # I2C devices
       "libvirtd" # manage virtual machines
       "kvm" # use KVM for virtualization

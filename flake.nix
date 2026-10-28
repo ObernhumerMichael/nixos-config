@@ -49,7 +49,6 @@
       devShells.${system} = dev.devShells;
 
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           stylix.nixosModules.stylix

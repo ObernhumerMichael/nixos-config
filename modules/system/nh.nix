@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   # nixos-rebuild/nix-gc frontend: `nh os switch`, `nh clean`
   programs.nh = {

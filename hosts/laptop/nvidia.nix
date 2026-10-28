@@ -1,11 +1,4 @@
-{ pkgs, ... }:
-
 {
-  environment.systemPackages = with pkgs; [
-    lshw
-    mesa-demos
-  ];
-
   services.xserver.videoDrivers = [
     "modesetting" # Intel iGPU
     "nvidia"

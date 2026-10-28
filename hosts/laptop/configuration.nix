@@ -1,10 +1,8 @@
-{ ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
     ../../modules/system
-    ../../modules/system/gnome.nix
   ];
 
   networking.hostName = "laptop";

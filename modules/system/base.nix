@@ -45,4 +45,5 @@
   };
   services.thermald.enable = true; # Intel thermal management
   zramSwap.enable = true;
+  programs.nix-ld.enable = true;
 }

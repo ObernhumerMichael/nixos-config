@@ -1,5 +1,3 @@
-{ ... }:
-
 let
   # Key on disk; the YubiKey one is only a public key, gpg-agent holds the private part
   ed25519 = "~/.ssh/id_ed25519";

@@ -1,15 +1,12 @@
 # All theming in one place: Stylix (system + Home Manager targets) and Qt.
 { pkgs, lib, ... }:
 
-let
-  theme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-in
 {
   stylix = {
     enable = true;
 
     image = ../../wallpapers/catppuccin.png;
-    base16Scheme = theme;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     polarity = "dark";
 
     cursor = {
@@ -24,9 +21,7 @@ in
         flavor = "mocha";
         accent = "blue"; # Options: blue, flamingo, mauve, pink, etc.
       };
-      # Note: Stylix uses these names to set GTK icon themes
-      light = "Papirus-Dark"; # Papirus-Dark usually looks better even on light themes
-      dark = "Papirus-Dark";
+      dark = "Papirus-Dark"; # Stylix sets the GTK icon theme from this name
     };
 
     fonts = {
@@ -59,16 +54,8 @@ in
     stylix.targets = {
       vscode.enable = false;
 
-      qt = {
-        enable = true;
-        platform = "qtct";
-      };
-    };
-
-    # qt5ct/qt6ct needs to actually be the platform theme backend used
-    qt = {
-      enable = true;
-      platformTheme.name = "qtct";
+      # the NixOS side picks "gnome"; Stylix sets HM qt.enable + platformTheme from this
+      qt.platform = "qtct";
     };
   };
 }

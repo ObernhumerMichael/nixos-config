@@ -3,7 +3,6 @@
 {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
     syntaxHighlighting.enable = true;
 
     autosuggestion = {
@@ -15,10 +14,7 @@
     };
 
     history = {
-      path = "$HOME/.zsh_history";
       size = 100000;
-      save = 100000;
-      ignoreDups = true;
       ignoreAllDups = true;
       share = true;
       extended = true;
@@ -50,9 +46,7 @@
     ];
   };
 
-  programs.starship = {
-    enable = true;
-  };
+  programs.starship.enable = true;
 
   # searchable shell history on Ctrl+R
   programs.atuin = {

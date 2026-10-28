@@ -5,7 +5,6 @@
     enable = true;
     keyMode = "vi";
     clock24 = true;
-    shell = "${pkgs.zsh}/bin/zsh";
 
     plugins = with pkgs.tmuxPlugins; [
       sensible # sane defaults
@@ -17,15 +16,11 @@
     ];
 
     extraConfig = ''
-      # Yank uses xclip / wl-copy depending on environment
-      set -g @yank_selection 'clipboard'
-
       # Resurrect settings
       set -g @resurrect-capture-pane-contents 'on'
 
       # Continuum settings
       set -g @continuum-restore 'on'
-      set -g @continuum-save-interval '15'
     '';
   };
 }
