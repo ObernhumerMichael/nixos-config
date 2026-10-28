@@ -4,6 +4,7 @@
   imports = [
     ./tmux.nix
     ./nix-index.nix
+    ./neovim.nix
   ];
 
   home.packages = with pkgs; [
@@ -27,14 +28,6 @@
   ];
 
   services.tldr-update.enable = true;
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    vimAlias = true;
-    withRuby = false;
-    withPython3 = false;
-  };
 
   programs.bat.enable = true;
   programs.ripgrep.enable = true;
