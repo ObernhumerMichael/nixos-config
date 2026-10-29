@@ -34,7 +34,13 @@
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
       ];
+    };
+
+    # Unset the default Super + N (focus notification) so it can open Nautilus.
+    "org/gnome/shell/keybindings" = {
+      focus-active-notification = [ ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -47,6 +53,12 @@
       binding = "<Super>Return";
       command = "kitty";
       name = "Start Terminal";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      binding = "<Super>n";
+      command = "nautilus";
+      name = "Open Nautilus";
     };
   };
 }
