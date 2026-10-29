@@ -59,6 +59,8 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.backupFileExtension = "backup";
+            # GNOME rewrites mimeapps.list; a stale .backup would block activation
+            home-manager.overwriteBackup = true;
             home-manager.users.user = import ./hosts/laptop/home.nix;
           }
         ];

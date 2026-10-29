@@ -37,10 +37,7 @@
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font Mono";
       };
-      emoji = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font Mono";
-      };
+      # emoji: Stylix default (Noto Color Emoji); Nerd Fonts have no emoji glyphs
     };
   };
 

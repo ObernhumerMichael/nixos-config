@@ -9,8 +9,8 @@
     powerManagement.enable = true;
     # Turns off the GPU when idle (Turing or newer).
     powerManagement.finegrained = true;
-    # Proprietary kernel module, not the open one.
-    open = false;
+    # Open kernel module, NVIDIA's recommendation for Turing and newer (RTX 3060 is Ampere).
+    open = true;
 
     prime = {
       offload = {
