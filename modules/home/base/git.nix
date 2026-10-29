@@ -22,7 +22,7 @@
     # University repos: student identity, no signing with the private key
     includes = [
       {
-        condition = "gitdir:~/dev/pp/";
+        condition = "gitdir:~/Documents/uni/2026w/pp/";
         contents = {
           user.email = "e12523098@student.tuwien.ac.at";
           commit.gpgSign = false;
