@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   nix.settings.experimental-features = [
     "nix-command"
@@ -8,6 +13,15 @@
   # flakes only; NIX_PATH and the registry already point at the flake's nixpkgs
   nix.channel.enable = false;
   nixpkgs.config.allowUnfree = true;
+  # pkgs.unstable.<name>; home-manager sees it too (useGlobalPkgs)
+  nixpkgs.overlays = [
+    (final: _: {
+      unstable = import inputs.nixpkgs-unstable {
+        inherit (final.stdenv.hostPlatform) system;
+        config.allowUnfree = true;
+      };
+    })
+  ];
 
   environment.systemPackages = with pkgs; [
     wget

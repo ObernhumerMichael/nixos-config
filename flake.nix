@@ -2,17 +2,21 @@
   description = "Michael's NixOS Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # Release upgrade: bump these three together (e.g. 26.05 -> 26.11), then `nix flake update`
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     stylix = {
-      url = "github:nix-community/stylix";
+      url = "github:nix-community/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # leaf apps that should stay fresh, used as pkgs.unstable.<name>
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";

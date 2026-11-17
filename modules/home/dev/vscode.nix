@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 let
   font = config.stylix.fonts.monospace.name;
@@ -6,6 +6,7 @@ in
 {
   programs.vscode = {
     enable = true;
+    package = pkgs.unstable.vscode;
 
     profiles.default = {
       userSettings = {

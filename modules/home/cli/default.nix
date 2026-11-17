@@ -48,9 +48,10 @@
       "--layout reverse"
       "--border"
     ];
-    fileWidget.options = [
+    # HM 26.05 option name; newer HM renames it to fileWidget.options
+    fileWidgetOptions = [
       "--preview 'bat --style=numbers --color=always {}'"
     ];
-    historyWidget.command = ""; # Ctrl+R belongs to atuin
+    # no Ctrl+R opt-out in HM 26.05; atuin's zsh init (order 1000) runs after fzf's (910) and wins
   };
 }
