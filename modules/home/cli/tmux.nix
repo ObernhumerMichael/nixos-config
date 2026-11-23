@@ -5,6 +5,11 @@
     enable = true;
     keyMode = "vi";
     clock24 = true;
+    mouse = true;
+    terminal = "tmux-256color"; # default "screen" breaks true color + italics in nvim
+    baseIndex = 1; # window 1 = key 1
+    escapeTime = 0; # no lag on Esc in nvim
+    historyLimit = 50000;
 
     plugins = with pkgs.tmuxPlugins; [
       sensible # sane defaults
@@ -16,6 +21,14 @@
     ];
 
     extraConfig = ''
+      set -as terminal-features ",xterm-kitty:RGB"
+      set -g renumber-windows on
+
+      # new splits/windows open in the current directory
+      bind '"' split-window -v -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
+      bind c new-window -c "#{pane_current_path}"
+
       # Resurrect settings
       set -g @resurrect-capture-pane-contents 'on'
 
