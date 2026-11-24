@@ -25,6 +25,7 @@
     wl-clipboard
     jq
     tldr
+    nvtopPackages.full
   ];
 
   services.tldr-update.enable = true;
